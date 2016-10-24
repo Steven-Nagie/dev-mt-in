@@ -28,9 +28,9 @@
 
 		<!-- Important to note that my work around for displaying the user name (displaying the name of the first index of the array), is not the best idea, since the users array will probably have many users.  -->
 		<div id="userProfile" ng-hide="userProfileHidden" class='main-left'>
-			<h1>{{users[0].name}}</h1>
-			<p id="some-awesome-tag">{{users[0].tag}}</p>
-			<p id="user-bio">{{users[0].bio}}</p>
+			<h1>{{users[users.length - 1].name}}</h1>
+			<p id="some-awesome-tag">{{users[users.length - 1].tag}}</p>
+			<p id="user-bio">{{users[users.length - 1].bio}}</p>
 		</div>
 		<div id="main-right">
 			<div id="top-triangle">

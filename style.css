@@ -1,0 +1,117 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+/*************HEADER***********/
+header {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;;
+  align-items: center;
+  border-bottom: 1px solid #a9a9a9;
+}
+
+#search-icon {
+  margin-left: 3vw;
+}
+
+#menu-icon {
+  margin-right: 3vw;
+}
+
+header p {
+  font-family: 'Lora' serif;
+  color: #272727;
+  font-size: 16.8px;
+  line-height: 21px;
+}
+
+/*************MAIN************/
+main {
+  box-sizing: border-box;
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding-left: 10vw;
+}
+
+main p {
+  font-family: 'Lora' serif;
+  font-size: 12.07px;
+  line-height: 14px;
+  color: #232323;
+  margin: 0;
+}
+
+#add-some {
+  margin-bottom: 10px;
+}
+
+#blue-devmountain {
+  color: #00ffe9;
+}
+
+#sign-up-div {
+  text-align: center;
+  height: 60vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+}
+
+/*I set the margin to 5 to provide just a little space between the input boxes. This might affect the size of the sign-up-div, so be careful of that as you move forward. */
+main input {
+  margin: 5px;
+}
+
+#bio-input {
+  height: 30vh;
+  padding: 0;
+  display: flex;
+  
+}
+
+ /***********FOOTER**********/
+
+  /*NOTE THAT I PUT MARGIN AUTO HERE. I DID THAT TO CENTER IT HORIZONTALLY, BUT AS I STACK STUFF ON TOP THAT COULD MESS OTHER THINGS UP.*/
+ footer {
+   position: absolute;
+   bottom: 0;
+   border-top: 1px solid #a9a9a9;
+   height: 10vh;
+   width: 80vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ #bottom-links {
+   width: 70vw;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+footer a {
+  color: #a9a9a9;
+  font-family: "Open Sans" serif;
+  font-weight: bold;
+  font-size: 13.2px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+/*Getting the text decoration color to work requires turning on "experimental web platform features" under chrome://flags*/
+footer a:hover {
+  text-decoration: underline;
+  text-decoration-color: #00ffe9;
+
+}

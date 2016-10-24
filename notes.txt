@@ -1,0 +1,4 @@
+TO DO
+1. format save changes button
+2. move bio in text input to the top left corner of the box
+3. format sign up div to be the proper width and have the proper bottom margin

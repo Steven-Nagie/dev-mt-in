@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="devMtnSocial">
 
 <head>
 	<meta charset="UTF-8">
@@ -7,7 +7,7 @@
 	<title>DevMtin</title>
 	<link rel="stylesheet" href="./style.css" media="screen" title="no title">
 </head>
-<body>
+<body ng-controller="mainCtrl">
 
 	<header>
 		<img src="./images/icons/search.svg" id='search-icon'>
@@ -16,16 +16,27 @@
 	</header>
 
 	<main>
-		<div id="sign-up-div">
+		<div id="sign-up-div" ng-hide='signUpHidden' class='main-left'>
 			<p>Welcome to <span id="blue-devmountain">DevMountain</span> Social</p>
 			<p id="add-some">Add Some Info So Friends Can Find You</p>
-			<input type="text" placeholder="Full Name">
-			<input placeholder="Tagline">
-			<input placeholder="Profile Image Url">
-			<input placeholder="Bio" id="bio-input">
-			<input type="submit" value="Save Changes">
+			<input type="text" placeholder="Full Name" ng-model="newUserName">
+			<input placeholder="Tagline" ng-model="newUserTag">
+			<input placeholder="Profile Image Url" ng-model="newUserImg">
+			<input placeholder="Bio" id="bio-input" ng-model="newUserBio">
+			<input type="submit" value="Save Changes" ng-click="addNewUser(newUserName, newUserTag, newUserImg, newUserBio); signUpHidden=true; userProfileHidden=false ">
 		</div>
-		<div id="">
+
+		<!-- Important to note that my work around for displaying the user name (displaying the name of the first index of the array), is not the best idea, since the users array will probably have many users.  -->
+		<div id="userProfile" ng-hide="userProfileHidden" class='main-left'>
+			<h1>{{users[0].name}}</h1>
+			<p id="some-awesome-tag">{{users[0].tag}}</p>
+			<p id="user-bio">{{users[0].bio}}</p>
+		</div>
+		<div id="main-right">
+			<div id="top-triangle">
+			</div>
+			<div id="bottom-triangle">
+			</div>
 		</div>
 	</main>
 
@@ -37,4 +48,9 @@
 		</div>
 	</footer>
 </body>
+<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script type="text/javascript" src="./js/app.js"></script>
+<script src="./js/mainCtrl.js"></script>
+</script>
 </html>

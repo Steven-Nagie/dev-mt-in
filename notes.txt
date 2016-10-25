@@ -6,3 +6,8 @@ HTML
 JS
 1. Have a way to access old user profiles using current local storage set up.
 2. push user img to blue triangle to be used as background
+
+Remaining views
+1. The view friends and friends profile page are just the exact same thing we already have, except the friend's profile page has their info (which will be an angular thing) and a blue "add friend bar".
+2. View friends and add friends will be the exact same styling, only populated with different information.
+  --To style it, just use flex-wrap with all the images.

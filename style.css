@@ -74,33 +74,37 @@ main h1 {
   color: #272727;
 }
 
-#userprofile p {
-  font-family: "Open Sans" sans-serif;
-  font-size: 10.2px;
-  line-height: 14px;
-  color: #000000;
-}
-
-#some-awesome-tag {
-  font-weight: bolder;
-  margin-bottom: 2vh;
-}
-
-#user-bio {
-  text-align: justify;
-}
-
 /*I set the margin to 5 to provide just a little space between the input boxes. This might affect the size of the sign-up-div, so be careful of that as you move forward. */
 main input {
   margin: 5px;
+  color: #b6b6b6;
+  font-family: 'Lora', serif;
+  font-size: 15.96px;
+  line-height: 19px;
 }
 
 #bio-input {
   height: 30vh;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 5px;
+  color: #b6b6b6;
+  font-family: 'Lora', serif;
+  font-size: 15.96px;
+  line-height: 19px;
+}
 
+#saveChanges {
+  font-family: 'Lora', serif;
+  font-size: 13.44px;
+  line-height: 17px;
+  color: #9A9A9A;
+  background-color: #74FDF2;
+  border: none;
+  height: 4vh;
+}
+
+input:focus {
+  color: #232323;
 }
 
 /*******MAIN-RIGHT********/
@@ -109,28 +113,53 @@ main input {
 }
 
 /*Notice the transform parameter to rotate the triangles*/
-#top-triangle {
+/*#top-triangle {
   width: 0;
   height: 0;
   border-left: 150px solid transparent;
   border-right: 150px solid transparent;
-  border-bottom: 200px solid;
-  /*-webkit-border-image: url("./images/devmtn-social-app.jpg");*/
+  border-bottom: 250px solid;
+  -webkit-border-image: url("https://images.unsplash.com/photo-1434441963555-a2f91c3a5f7c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=a4a45eefe2f92f7d48afd05bd27b80e5");
   -webkit-transform: rotate(10deg);
   margin-left: 5px;
   opacity: 0.2;
+}*/
+
+#top-triangle {
+  margin-bottom: -15vh;
+  background-image: url("https://images.unsplash.com/photo-1434441963555-a2f91c3a5f7c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=a4a45eefe2f92f7d48afd05bd27b80e5");
+  opacity: 0.2;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(10deg);
+  height: 300px;
+  width: 300px;
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
 }
 
-#bottom-triangle {
+/*#bottom-triangle {
   width: 0;
   height: 0;
   border-left: 150px solid transparent;
   border-right: 150px solid transparent;
-  border-top: 200px solid #00ffe9;
+  border-top: 250px solid #00ffe9;
   -webkit-transform: rotate(-10deg);
   position: relative;
   margin-top: -10vh;
+}*/
+
+#bottom-triangle {
+  margin-top: -15vh;
+  background-color: #00FFE9;
+  opacity: 0.5;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(-10deg);
+  height: 300px;
+  width: 300px;
+  -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
 }
+
 
  /***********FOOTER**********/
 

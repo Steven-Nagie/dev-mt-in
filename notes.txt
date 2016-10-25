@@ -1,9 +1,7 @@
 TO DO
 HTML
-1. format save changes button
-2. move bio in text input to the top left corner of the box
 3. format sign up div to be the proper width and have the proper bottom margin
-4. photos for triangle divs
+
 
 JS
 1. Have a way to access old user profiles using current local storage set up.

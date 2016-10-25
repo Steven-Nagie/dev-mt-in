@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>DevMtin</title>
 	<link rel="stylesheet" href="./style.css" media="screen" title="no title">
+	<link rel="stylesheet" href="./landingPage.css" media="screen" title="no title">
 </head>
 <body ng-controller="mainCtrl">
 
@@ -15,36 +16,45 @@
 		<img src="./images/icons/ham.svg" id='menu-icon'>
 	</header>
 
+
+     <!-- **************ENTRY SIGN UP******************** -->
 	<main>
 		<div id="sign-up-div" ng-hide='signUpHidden' class='main-left'>
 			<p>Welcome to <span id="blue-devmountain">DevMountain</span> Social</p>
 			<p id="add-some">Add Some Info So Friends Can Find You</p>
-			<input type="text" placeholder="Full Name" ng-model="newUserName">
-			<input placeholder="Tagline" ng-model="newUserTag">
-			<input placeholder="Profile Image Url" ng-model="newUserImg">
-			<input placeholder="Bio" id="bio-input" ng-model="newUserBio">
-			<input type="submit" value="Save Changes" ng-click="addNewUser(newUserName, newUserTag, newUserImg, newUserBio); signUpHidden=true; userProfileHidden=false ">
+			<input type="text" placeholder="Full Name" ng-model="newUserName" onfocus="this.style.color='#232323'">
+			<input placeholder="Tagline" ng-model="newUserTag" onfocus="this.style.color='#232323'">
+			<input placeholder="Profile Image Url" ng-model="newUserImg" onfocus="this.style.color='#232323'">
+			<!-- <input placeholder="Bio" id="bio-input" ng-model="newUserBio"> -->
+			<textarea placeholder="Bio" id="bio-input" ng-model="newUserBio" onfocus="this.style.color='#232323'"></textarea>
+			<input type="submit" value="Save Changes" ng-click="addNewUser(newUserName, newUserTag, newUserImg, newUserBio); signUpHidden=true; userProfileHidden=false; trianglePhoto={'background-image': userImage}" id="saveChanges">
 		</div>
 
+		<!-- *********************USER PROFILE******************** -->
 		<!-- Important to note that my work around for displaying the user name (displaying the name of the first index of the array), is not the best idea, since the users array will probably have many users.  -->
 		<div id="userProfile" ng-hide="userProfileHidden" class='main-left'>
 			<h1>{{users[users.length - 1].name}}</h1>
 			<p id="some-awesome-tag">{{users[users.length - 1].tag}}</p>
 			<p id="user-bio">{{users[users.length - 1].bio}}</p>
 		</div>
-		<div id="main-right">
+
+			<!-- **********************PHOTO TRIANGLES************** -->
+		<div id="main-right" ng-hide="trianglesHidden">
 			<div id="top-triangle">
 			</div>
-			<div id="bottom-triangle">
+			<div id="bottom-triangle" ng-style='trianglePhoto'>
 			</div>
 		</div>
 	</main>
+
+	<!-- ***************************UPDATE PROFILE****************** -->
+	
 
 	<footer>
 		<div id="bottom-links">
 			<a href="" target="_blank">View Friends</a>
 			<a href="" target="_blank">Find Friends</a>
-			<a href="" target="_blank">Update Profile</a>
+			<a href="" target="_blank" ng-click="trianglesHidden = !trianglesHidden">Update Profile</a>
 		</div>
 	</footer>
 </body>

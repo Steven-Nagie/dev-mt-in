@@ -47,15 +47,16 @@
 		</div>
 
 	<!-- ***************************UPDATE PROFILE****************** -->
-	<div id="update-profile" ng-hide="updateHidden" class='main-text'>
-		<div><p>Profile Settings</p></div>
-		<div id="update-profile-inputs">
+	<div id="update" ng-hide="updateHidden" class='main-text'>
+		<p>Profile Settings</p>
+
 			<input type="text" placeholder="Full Name" ng-model="oldUserName" onfocus="this.style.color='#232323'">
 			<input placeholder="Tagline" ng-model="oldUserTag" onfocus="this.style.color='#232323'">
 			<input placeholder="Profile Image Url" ng-model="oldUserImg" onfocus="this.style.color='#232323'">
 			<textarea placeholder="Bio" id="bio-input" ng-model="oldUserBio" onfocus="this.style.color='#232323'"></textarea>
 			<input type="submit" value="Save Changes" ng-click="changeUser(oldUserName, oldUserTag, oldUserImg, oldUserBio); updateHidden=!updateHidden; trianglesHidden=!trianglesHidden; trianglePhoto={'background-image': userImage}" id="saveUpdates">
 	</div>
+
 	</main>
 
 

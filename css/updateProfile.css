@@ -1,0 +1,24 @@
+#update {
+  margin-top: 1.6vh;
+  margin-left: 10vw;
+}
+
+#update p {
+  margin-bottom: 15px;
+}
+
+#saveUpdates {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  font-family: 'Lora', serif;
+  font-size: 13.44px;
+  line-height: 17px;
+  color: #9A9A9A;
+  height: 4vh;
+  transition: all 1s;
+}
+
+#saveUpdates:hover {
+  background-color: #74FDF2;
+  border: none;
+  box-shadow: none;
+}

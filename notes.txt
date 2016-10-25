@@ -1,7 +1,7 @@
 TO DO
 HTML
 3. format sign up div to be the proper width and have the proper bottom margin
-4. Format user profile div to be centered
+4. Finish styling update inputs
 
 JS
 1. Have a way to access old user profiles using current local storage set up.

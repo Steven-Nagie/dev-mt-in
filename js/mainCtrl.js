@@ -1,8 +1,7 @@
 angular.module('devMtnSocial')
-.controller('mainCtrl', function($scope, updateProfile){
+.controller('mainCtrl', function($scope, updateProfile, friendService){
   $scope.users = [];
-
-
+  $scope.friends = friendService.friends;
 
   // All the stuff contained here is for saving user profiles to the local storage.
   if (localStorage.list) {

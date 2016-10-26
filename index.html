@@ -5,10 +5,12 @@
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>DevMtin</title>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,600,700" rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/landingPage.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/updateProfile.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/friends.css" media="screen" title="no title">
+	<link rel="stylesheet" href="./css/desktop.css" media="(min-width: 700px)" title="no title">
 </head>
 <body ng-controller="mainCtrl">
 
@@ -59,21 +61,19 @@
 	</div>
 
 	<!-- ************************YOUR FRIENDS************************ -->
-	<!-- <div class='friendsView' ng-hide="friendsHidden">
+	<div class='friendsView' ng-hide="friendsHidden">
 		<div class='friends-view-top'>
-			<!-- see friends list project for how to make the ascending/descending filter -->
-			<!-- <h4>Friends</h4>
+			<select class="input-medium" ng-model="sortDirection">
+				<option value="true">Descending</option>
+				<option value="">Ascending</option>
+			</select>
+			<h4>Friends</h4>
 			<img src="./images/icons/search.svg" id='search-icon'>
 		</div>
 		<div class="friend-photo-container">
-			<img src="" alt="{{userfriend[0]}}" />
-			<img src="" alt="" />
-			<img src="" alt="" />
-			<img src="" alt="" />
-			<img src="" alt="" />
-			<img src="" alt="" />
+			<img ng-repeat="friend in friends | orderBy: friend.name : sortDirection | limitTo:6" ng-src={{friend.img}} alt="friend.name" />
 		</div>
-	</div> --> 
+	</div>
 
 	</main>
 

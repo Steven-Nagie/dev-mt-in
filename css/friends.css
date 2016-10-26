@@ -1,5 +1,44 @@
 .friendsView {
   background-color: red;
-  width: 50vw;
-  height: 50vh;
+  width: 35vw;
+  height: 60vh;
+}
+
+.friends-view-top {
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;;
+  align-items: center;
+}
+
+.friends-view-top img {
+  margin-right: 0;
+}
+
+.friends-view-top h4 {
+  font-family: 'Lora' serif;
+  font-size: 19.8px;
+  line-height: 0px;
+  color: #232323;
+}
+
+.input-medium {
+  margin-left: 0px;
+  height: 15px;
+  width: 40px;
+  font-size: 10px;
+}
+
+.friend-photo-container img {
+  height: 33%;
+  width: 50%;
+}
+
+.friend-photo-container {
+  display: flex;
+  /*flex-direction: row;*/
+  /*flex-wrap: wrap;*/
+  flex-flow: row wrap;
+  justify-content: space-around;;
+  align-items: center;
 }

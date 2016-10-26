@@ -3,10 +3,11 @@ HTML
 3. format sign up div to be the proper width and have the proper bottom margin
 4. Finish styling update inputs (borders/shadows)
 5. On landing page change search icon to miniature blue photo triangle.
+6. Fix triangle size
+7. Fix triangle position so that they are more centered in their containing div. As it is right now they are shooting out left and leaving a great deal of white space on their right.
 
 JS
 1. Have a way to access old user profiles using current local storage set up.
-2. push user img to blue triangle to be used as background
 
 Remaining views
 1. The view friends and friends profile page are just the exact same thing we already have, except the friend's profile page has their info (which will be an angular thing) and a blue "add friend bar".

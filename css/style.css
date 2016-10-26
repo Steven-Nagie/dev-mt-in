@@ -40,8 +40,9 @@ main {
   width: 100vw;
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
-  padding-left: 10vw;
+  justify-content: space-around;
+  /*This padding was to get the input box aligned correctly. But with the space around justification this is no longer necessary.*/
+  /*padding-left: 10vw;*/
 }
 
 main p {
@@ -110,7 +111,8 @@ input:focus {
 
 /*******MAIN-RIGHT********/
 #main-right {
-  margin-left: 10vw;
+  height: 60vh;
+  width: 35vw;
 }
 
 /*Notice the transform parameter to rotate the triangles*/

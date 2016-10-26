@@ -62,6 +62,7 @@
 	</div>
 
 	<!-- ************************YOUR FRIENDS************************ -->
+	<!-- The list of friends is populated automatically with the friends list I created by hand. This will have the exact same look as if I just put in each data point individually one by one, with the exception that this would actually scale up perfectly (I think). -->
 	<div class='friendsView' ng-hide="friendsHidden">
 		<div class='friends-view-top'>
 			<select class="friend-order" ng-model="sortDirection">
@@ -72,7 +73,7 @@
 			<img src="./images/icons/search.svg" id='search-icon'>
 		</div>
 		<div class="friend-photo-container">
-			<img ng-repeat="friend in friends | orderBy: friend.name : sortDirection | limitTo:6" ng-src={{friend.img}} alt="friend.name" />
+			<img ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo:6" ng-src={{friend.img}} alt="friend.name" ng-model/>
 		</div>
 	</div>
 

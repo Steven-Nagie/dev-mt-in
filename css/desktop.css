@@ -1,10 +1,26 @@
-.input-medium {
+/**************FRIENDS VIEW********************/
+/* This is the input box determining order */
+.friend-order {
   height: auto;
   width: auto;
   font-size: auto;
   margin-left: 15px;
 }
 
+.friends-view-top {
+  height: auto;
+  width: auto;
+  margin: 0 16px;
+  background-color: white;
+}
+
+/* This is the icon in the friends bar */
 .friends-view-top img {
   margin-right: 15px;
+}
+
+.friend-photo-container img {
+  height: 16vh;
+  width: 15vw;
+  /*margin: 6px;*/
 }

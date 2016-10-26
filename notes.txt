@@ -5,6 +5,7 @@ HTML
 5. On landing page change search icon to miniature blue photo triangle.
 6. Fix triangle size
 7. Fix triangle position so that they are more centered in their containing div. As it is right now they are shooting out left and leaving a great deal of white space on their right.
+8. Put blue color on pictures. 
 
 JS
 1. Have a way to access old user profiles using current local storage set up.

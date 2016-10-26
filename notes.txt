@@ -11,3 +11,6 @@ Remaining views
 1. The view friends and friends profile page are just the exact same thing we already have, except the friend's profile page has their info (which will be an angular thing) and a blue "add friend bar".
 2. View friends and add friends will be the exact same styling, only populated with different information.
   --To style it, just use flex-wrap with all the images.
+
+
+  Figured out the bug. I was trying to assign the userImage variable to the image of the first user, but because there is no original user, it was undefined, and it didn't like that. Fixing it required only that I move the function to a place where it doesn't automatically fire, instead it is invoked whenever I create the first user.

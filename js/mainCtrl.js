@@ -1,5 +1,5 @@
 angular.module('devMtnSocial')
-.controller('mainCtrl', function($scope, updateProfile){
+.controller('mainCtrl', function($scope){
   $scope.users = [];
 
 
@@ -16,6 +16,8 @@ angular.module('devMtnSocial')
     // This line immediately pushes any new user profiles to the local storage
     localStorage.setItem('list', JSON.stringify($scope.users));
     console.log($scope.users);
+    // The following creates a variable containing the image of the latest user, which we then push into the bottom triangle using ng-style.
+    $scope.userImage = "url(" + $scope.users[$scope.users.length - 1].img + ")";
   };
 
   $scope.changeUser = function(newName, newTag, newImg, newBio) {
@@ -41,6 +43,6 @@ angular.module('devMtnSocial')
   $scope.trianglesHidden = false;
   $scope.updateHidden = true;
 
-  // The following creates a variable containing the image of the latest user, which we then push into the bottom triangle using ng-style.
-  $scope.userImage = "url(" + $scope.users[$scope.users.length - 1].img + ")";
+
+
 });

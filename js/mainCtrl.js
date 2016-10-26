@@ -35,11 +35,12 @@ angular.module('devMtnSocial')
     console.log($scope.users);
   };
 
-  // These variables are all used as true/false toggles for adding classes to divs during the change from entry page to landing page.
+  // These variables are all used as true/false toggles for adding classes to divs during the change between different pages.
   $scope.signUpHidden = false;
   $scope.userProfileHidden = true;
   $scope.trianglesHidden = false;
   $scope.updateHidden = true;
+  $scope.friendsHidden = true;
 
   // The following creates a variable containing the image of the latest user, which we then push into the bottom triangle using ng-style.
   $scope.userImage = "url(" + $scope.users[$scope.users.length - 1].img + ")";

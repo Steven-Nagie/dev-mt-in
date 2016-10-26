@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="./css/style.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/landingPage.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/updateProfile.css" media="screen" title="no title">
+	<link rel="stylesheet" href="./css/friends.css" media="screen" title="no title">
 </head>
 <body ng-controller="mainCtrl">
 
@@ -57,15 +58,32 @@
 			<input type="submit" value="Save Changes" ng-click="changeUser(oldUserName, oldUserTag, oldUserImg, oldUserBio); updateHidden=!updateHidden; trianglesHidden=!trianglesHidden; trianglePhoto={'background-image': userImage}" id="saveUpdates">
 	</div>
 
+	<!-- ************************YOUR FRIENDS************************ -->
+	<!-- <div class='friendsView' ng-hide="friendsHidden">
+		<div class='friends-view-top'>
+			<!-- see friends list project for how to make the ascending/descending filter -->
+			<!-- <h4>Friends</h4>
+			<img src="./images/icons/search.svg" id='search-icon'>
+		</div>
+		<div class="friend-photo-container">
+			<img src="" alt="{{userfriend[0]}}" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+			<img src="" alt="" />
+		</div>
+	</div> --> -->
+
 	</main>
 
 
 	<!-- ************************FOOTER************************* -->
 	<footer>
 		<div id="bottom-links">
-			<a href="" target="_blank">View Friends</a>
+			<a href="" target="_blank" ng-click="friendsHidden=!friendsHidden; trianglesHidden=!trianglesHidden">View Friends</a>
 			<a href="" target="_blank">Find Friends</a>
-			<a href="" target="_blank" ng-click="trianglesHidden = !trianglesHidden; updateHidden = !updateHidden">Update Profile</a>
+			<a href="" target="_blank" ng-click="trianglesHidden=!trianglesHidden; updateHidden=!updateHidden">Update Profile</a>
 		</div>
 	</footer>
 </body>
@@ -74,5 +92,6 @@
 <script type="text/javascript" src="./js/app.js"></script>
 <script src="./js/mainCtrl.js"></script>
 <script src="./js/upProfileService.js"></script>
+<script src="./js/friendStorage.js"></script>
 </script>
 </html>

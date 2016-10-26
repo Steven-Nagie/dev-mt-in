@@ -40,6 +40,7 @@ main {
   width: 100vw;
   display: flex;
   align-items: center;
+  /*justify-content: center;*/
   padding-left: 10vw;
 }
 

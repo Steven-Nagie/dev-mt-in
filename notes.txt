@@ -11,6 +11,7 @@ HTML
 JS
 1. Have a way to access old user profiles using current local storage set up.
 2. Figure out how to properly rotate the three different views for each side.
+3. Rewrite 'changUser' to change multiple values at a time.
 
 Remaining views
 1. The view friends and friends profile page are just the exact same thing we already have, except the friend's profile page has their info (which will be an angular thing) and a blue "add friend bar".
@@ -24,4 +25,4 @@ Friends view
 1. Put link to friend's profile on top of image.
 2. Change search icon to back arrow.
 
-As far as populating a friend's or stranger's profile page, it seems the easiest way to do so would be to create a new hidden div and make it appear when you click their photo. However, I would like it better if we could keep the user profile div we hav, and simply switch the information. 
+As far as populating a friend's or stranger's profile page, it seems the easiest way to do so would be to create a new hidden div and make it appear when you click their photo. However, I would like it better if we could keep the user profile div we hav, and simply switch the information.

@@ -73,7 +73,7 @@
 			<img src="./images/icons/search.svg" id='search-icon'>
 		</div>
 		<div class="friend-photo-container">
-			<img ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo:6" ng-src={{friend.img}} alt="friend.name" ng-model/>
+			<img ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo:6" ng-src={{friend.img}} alt="friend.name" ng-model="currentFriend" ng-click="dosomething to show friend profile"/>
 		</div>
 	</div>
 

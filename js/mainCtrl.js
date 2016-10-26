@@ -15,6 +15,8 @@ angular.module('devMtnSocial')
     $scope.users.push({name: newName, tag: newTag, img: newImg, bio: newBio});
     // This line immediately pushes any new user profiles to the local storage
     localStorage.setItem('list', JSON.stringify($scope.users));
+    // The following creates a variable containing the image of the latest user, which we then push into the bottom triangle using ng-style.
+    $scope.userImage = "url(" + $scope.users[$scope.users.length - 1].img + ")";
     console.log($scope.users);
   };
 
@@ -42,6 +44,5 @@ angular.module('devMtnSocial')
   $scope.updateHidden = true;
   $scope.friendsHidden = true;
 
-  // The following creates a variable containing the image of the latest user, which we then push into the bottom triangle using ng-style.
-  $scope.userImage = "url(" + $scope.users[$scope.users.length - 1].img + ")";
+
 });

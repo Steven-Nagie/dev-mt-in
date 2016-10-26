@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="./css/updateProfile.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/friends.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/desktop.css" media="(min-width: 700px)" title="no title">
+	<link rel="stylesheet" href="./css/findFriends.css" media="screen" title="no title">
 </head>
 <body ng-controller="mainCtrl">
 
@@ -75,15 +76,26 @@
 		</div>
 	</div>
 
+	<!-- *********************FIND FRIENDS*********************** -->
+	<div class='friendsView' ng-hide="findHidden" id="find-friends">
+		<div class='friends-view-top' id="find-friends-top">
+			<img src="./images/icons/search.svg" id='search-icon-find-friends'>
+			<h4 id="search-for-friends">Search For Friends</h4>
+		</div>
+		<div class="friend-photo-container">
+			<img ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection | limitTo:6" ng-src={{stranger.img}} alt="stranger.name" />
+		</div>
+	</div>
+
 	</main>
 
 
 	<!-- ************************FOOTER************************* -->
 	<footer>
 		<div id="bottom-links">
-			<a href="" target="_blank" ng-click="friendsHidden=!friendsHidden; trianglesHidden=!trianglesHidden">View Friends</a>
-			<a href="" target="_blank">Find Friends</a>
-			<a href="" target="_blank" ng-click="trianglesHidden=!trianglesHidden; updateHidden=!updateHidden">Update Profile</a>
+			<a href="" target="_blank" ng-click="showFriends()">View Friends</a>
+			<a href="" target="_blank" ng-click="showFind()">Find Friends</a>
+			<a href="" target="_blank" ng-click="showUpdate()">Update Profile</a>
 		</div>
 	</footer>
 </body>
@@ -93,5 +105,5 @@
 <script src="./js/mainCtrl.js"></script>
 <script src="./js/upProfileService.js"></script>
 <script src="./js/friendStorage.js"></script>
-</script>
+<script src="./js/strangerService.js"></script>
 </html>

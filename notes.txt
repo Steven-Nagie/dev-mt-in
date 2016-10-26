@@ -5,12 +5,21 @@ HTML
 5. On landing page change search icon to miniature blue photo triangle.
 6. Fix triangle size
 7. Fix triangle position so that they are more centered in their containing div. As it is right now they are shooting out left and leaving a great deal of white space on their right.
-8. Put blue color on pictures. 
+8. Put blue color on pictures.
+9. Profile full name should be offset.
 
 JS
 1. Have a way to access old user profiles using current local storage set up.
+2. Figure out how to properly rotate the three different views for each side.
 
 Remaining views
 1. The view friends and friends profile page are just the exact same thing we already have, except the friend's profile page has their info (which will be an angular thing) and a blue "add friend bar".
 2. View friends and add friends will be the exact same styling, only populated with different information.
   --To style it, just use flex-wrap with all the images.
+
+Other
+1. Why does it load every element at once and then snap into it's proper formation?
+
+Friends view
+1. Put link to friend's profile on top of image.
+2. Change search icon to back arrow.

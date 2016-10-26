@@ -1,0 +1,9 @@
+#find-friends-top {
+  display: flex;
+  justify-content: center;
+}
+
+#search-icon-find-friends {
+  position: relative;
+  right: 20px;
+}

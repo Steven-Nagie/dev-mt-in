@@ -1,8 +1,27 @@
-angular.module('devMtnSocial').service('strangerService', function() {
-  this.strangers = [];
+angular.module('devMtnSocial').service('strangerService', function($http, $q) {
+  var strangers = [];
+
+  setTimeout(function() {this.strangers = strangers; console.log("this is this.strangers:" + this.strangers);}, 2000);
+
+  this.getHeroes = function() {
+    return $http({
+      method: 'GET',
+      url: 'https://gateway.marvel.com:443/v1/public/characters?apikey=663fb1c634171cbd6e99378697d414eb'
+    }).then(function(response) {
+      // var responseArr = response.data.data.results;
+      // for (var i = 0; i < responseArr.length; i++) {
+      //   strangers.push(responseArr[i]);
+      // }
+      this.strangers = response.data.data.results;
+      console.log(strangers);
+
+    });
+  };
+
+
 
   this.createStranger = function(strangeName, strangeTag, strangeBio, strangeImg) {
-      this.strangers.push({name: strangeName, tag: strangeTag, bio: strangeBio, img: strangeImg});
+      strangers.push({name: strangeName, tag: strangeTag, bio: strangeBio, img: strangeImg});
   };
 
   this.createStranger("Michael Schumacher", "Fastest Man Alive", 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', "https://s3-ap-southeast-1.amazonaws.com/s3freebucket/BootstrapScrollSpy/michael_schumacher.jpg");

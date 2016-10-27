@@ -2,7 +2,13 @@ angular.module('devMtnSocial')
 .controller('mainCtrl', function($scope, updateProfile, friendService, strangerService){
   $scope.users = [];
   $scope.friends = friendService.friends;
-  $scope.strangers = strangerService.strangers;
+
+  $scope.getHeroes = function() {
+    $scope.strangers = strangerService.getHeroes();
+  };
+
+  $scope.getHeroes();
+
 
   // All the stuff contained here is for saving user profiles to the local storage.
   if (localStorage.list) {
@@ -24,11 +30,17 @@ angular.module('devMtnSocial')
     var userList = $scope.users;
     if (newName) {
       userList[userList.length - 1].name = newName;
-    } else if (newTag) {
+    }
+
+    if (newTag) {
       userList[userList.length - 1].tag = newTag;
-    } else if (newImg) {
+    }
+
+    if (newImg) {
       userList[userList.length - 1].img = newImg;
-    } else if (newBio) {
+    }
+
+    if (newBio) {
       userList[userList.length - 1].bio = newBio;
     }
     $scope.users = userList;

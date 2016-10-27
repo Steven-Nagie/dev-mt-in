@@ -83,8 +83,8 @@
 			<img src="./images/icons/search.svg" id='search-icon-find-friends'>
 			<h4 id="search-for-friends">Search For Friends</h4>
 		</div>
-		<div class="friend-photo-container">
-			<img ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection | limitTo:6" ng-src={{stranger.img}} alt="stranger.name" />
+		<div class="friend-photo-container" >
+			<img ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection| limitTo: 6" ng-src="{{stranger.thumbnail.path + '.jpg'}}" alt="{{stranger.name}}" />
 		</div>
 	</div>
 

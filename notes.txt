@@ -26,3 +26,8 @@ Friends view
 2. Change search icon to back arrow.
 
 As far as populating a friend's or stranger's profile page, it seems the easiest way to do so would be to create a new hidden div and make it appear when you click their photo. However, I would like it better if we could keep the user profile div we hav, and simply switch the information.
+
+name: stranger.name
+tag: 
+bio: stranger.description
+img: stranger.thumbnail.path + '.jpg'

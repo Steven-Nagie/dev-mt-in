@@ -2,18 +2,29 @@ angular.module('devMtnSocial')
 .controller('mainCtrl', function($scope, updateProfile, friendService, strangerService){
   $scope.users = [];
   $scope.friends = friendService.friends;
+  $scope.strangers = [];
 
+  // Calls the promise, sets my strangers array equal to the returned value, then splices out any data that don't contain valid urls for images. 
   $scope.getHeroes = function() {
-    $scope.strangers = strangerService.getHeroes();
+    var strangers = [];
+    strangerService.getHeroes().then(function(response) {
+      $scope.strangers = response.data.data.results;
+      for (var i = $scope.strangers.length - 1; i >= 0; i--) {
+        if ($scope.strangers[i].thumbnail.path.includes("not")) {
+          $scope.strangers.splice(i, 1);
+        }
+      }
+      console.log($scope.strangers);
+    });
   };
 
   $scope.getHeroes();
 
 
+
   // All the stuff contained here is for saving user profiles to the local storage.
   if (localStorage.list) {
     $scope.users = JSON.parse(localStorage.getItem('list'));
-    console.log($scope.users);
   }
   // *************************************
 

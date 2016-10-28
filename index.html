@@ -42,6 +42,20 @@
 			<p id="user-bio">{{users[users.length - 1].bio}}</p>
 		</div>
 
+		<!-- *********************FRIEND PROFILE******************** -->
+		<div id="userProfile" ng-hide="friendProfileHidden" class='main-text'>
+			<h1>{{chosenFriend.name}}</h1>
+			<p id="some-awesome-tag">{{chosenFriend.tag}}</p>
+			<p id="user-bio">{{chosenFriend.bio}}</p>
+		</div>
+
+		<!-- *********************STRANGER PROFILE******************** -->
+		<div id="userProfile" ng-hide="strangerProfileHidden" class='main-text'>
+			<h1>{{strangers[0].name}}</h1>
+			<p id="some-awesome-tag">He's a maniac on the floor</p>
+			<p id="user-bio">{{strangers[0].description}}</p>
+		</div>
+
 			<!-- **********************PHOTO TRIANGLES************** -->
 		<div id="main-right" ng-hide="trianglesHidden">
 			<div id="top-triangle">

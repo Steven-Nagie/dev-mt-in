@@ -4,21 +4,29 @@ angular.module('devMtnSocial')
   $scope.friends = friendService.friends;
   $scope.strangers = [];
 
-  // Calls the promise, sets my strangers array equal to the returned value, then splices out any data that don't contain valid urls for images. 
+  // Calls the promise, sets my strangers array equal to the returned value, then splices out any data that don't contain valid urls for images. I made sure to do the same thing for 'description', which serves as the bio.
   $scope.getHeroes = function() {
     var strangers = [];
     strangerService.getHeroes().then(function(response) {
       $scope.strangers = response.data.data.results;
       for (var i = $scope.strangers.length - 1; i >= 0; i--) {
-        if ($scope.strangers[i].thumbnail.path.includes("not")) {
+        if ($scope.strangers[i].thumbnail.path.includes("not") || !$scope.strangers[i].description) {
           $scope.strangers.splice(i, 1);
         }
       }
+      localStorage.setItem('strangersList', JSON.stringify($scope.strangers));
+
       console.log($scope.strangers);
     });
   };
 
-  $scope.getHeroes();
+  // When we first boot up, this will grab the Marvel api for us. Because the Marvel api stores thing on local storage, this also tests if we have already done it, and if we have, we don't bother doing it again, we just pull the stuff from local storage. This helps keep our calls to the api down.
+  if (localStorage.strangersList) {
+    $scope.strangers = JSON.parse(localStorage.getItem('strangersList'));
+    console.log($scope.strangers);
+  } else {
+    $scope.getHeroes();
+  }
 
 
 
@@ -67,6 +75,8 @@ angular.module('devMtnSocial')
   $scope.updateHidden = true;
   $scope.friendsHidden = true;
   $scope.findHidden = true;
+  $scope.friendProfileHidden = true;
+  // $scope.strangerProfileHidden = true;
 
   // It was working well to just use friendsHidden = !friendsHidden, until there were more than two possibilities per location.
   // What's below is a really cool thing that will show the div you want upon first click, but upon second click will set everything right back to the way it was. However, I realized from a user perspective that wasn't the most friendly possible option.

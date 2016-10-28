@@ -5,9 +5,13 @@
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>DevMtin</title>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,600,700" rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/landingPage.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/updateProfile.css" media="screen" title="no title">
+	<link rel="stylesheet" href="./css/friends.css" media="screen" title="no title">
+	<link rel="stylesheet" href="./css/desktop.css" media="(min-width: 700px)" title="no title">
+	<link rel="stylesheet" href="./css/findFriends.css" media="screen" title="no title">
 </head>
 <body ng-controller="mainCtrl">
 
@@ -38,6 +42,20 @@
 			<p id="user-bio">{{users[users.length - 1].bio}}</p>
 		</div>
 
+		<!-- *********************FRIEND PROFILE******************** -->
+		<div id="userProfile" ng-hide="friendProfileHidden" class='main-text'>
+			<h1>{{chosenFriend.name}}</h1>
+			<p id="some-awesome-tag">{{chosenFriend.tag}}</p>
+			<p id="user-bio">{{chosenFriend.bio}}</p>
+		</div>
+
+		<!-- *********************STRANGER PROFILE******************** -->
+		<div id="userProfile" ng-hide="strangerProfileHidden" class='main-text'>
+			<h1>{{strangers[0].name}}</h1>
+			<p id="some-awesome-tag">He's a maniac on the floor</p>
+			<p id="user-bio">{{strangers[0].description}}</p>
+		</div>
+
 			<!-- **********************PHOTO TRIANGLES************** -->
 		<div id="main-right" ng-hide="trianglesHidden">
 			<div id="top-triangle">
@@ -57,15 +75,42 @@
 			<input type="submit" value="Save Changes" ng-click="changeUser(oldUserName, oldUserTag, oldUserImg, oldUserBio); updateHidden=!updateHidden; trianglesHidden=!trianglesHidden; trianglePhoto={'background-image': userImage}" id="saveUpdates">
 	</div>
 
+	<!-- ************************YOUR FRIENDS************************ -->
+	<!-- The list of friends is populated automatically with the friends list I created by hand. This will have the exact same look as if I just put in each data point individually one by one, with the exception that this would actually scale up perfectly (I think). -->
+	<div class='friendsView' ng-hide="friendsHidden">
+		<div class='friends-view-top'>
+			<select class="friend-order" ng-model="sortDirection">
+				<option value="true">Descending</option>
+				<option value="">Ascending</option>
+			</select>
+			<h4>Friends</h4>
+			<img src="./images/icons/search.svg" id='search-icon'>
+		</div>
+		<div class="friend-photo-container">
+			<img ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo:6" ng-src={{friend.img}} alt="friend.name" ng-model="currentFriend" /> <!--ng-click="dosomething to show friend profile"-->
+		</div>
+	</div>
+
+	<!-- *********************FIND FRIENDS*********************** -->
+	<div class='friendsView' ng-hide="findHidden" id="find-friends">
+		<div class='friends-view-top' id="find-friends-top">
+			<img src="./images/icons/search.svg" id='search-icon-find-friends'>
+			<h4 id="search-for-friends">Search For Friends</h4>
+		</div>
+		<div class="friend-photo-container" >
+			<img ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection| limitTo: 6" ng-src="{{stranger.thumbnail.path + '.jpg'}}" alt="{{stranger.name}}" />
+		</div>
+	</div>
+
 	</main>
 
 
 	<!-- ************************FOOTER************************* -->
 	<footer>
 		<div id="bottom-links">
-			<a href="" target="_blank">View Friends</a>
-			<a href="" target="_blank">Find Friends</a>
-			<a href="" target="_blank" ng-click="trianglesHidden = !trianglesHidden; updateHidden = !updateHidden">Update Profile</a>
+			<a href="" target="_blank" ng-click="showFriends()">View Friends</a>
+			<a href="" target="_blank" ng-click="showFind()">Find Friends</a>
+			<a href="" target="_blank" ng-click="showUpdate()">Update Profile</a>
 		</div>
 	</footer>
 </body>
@@ -73,5 +118,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
 <script type="text/javascript" src="./js/app.js"></script>
 <script src="./js/mainCtrl.js"></script>
-</script>
+<script src="./js/upProfileService.js"></script>
+<script src="./js/friendStorage.js"></script>
+<script src="./js/strangerService.js"></script>
+
 </html>

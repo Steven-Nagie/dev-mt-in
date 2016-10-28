@@ -1,0 +1,46 @@
+.friendsView {
+  width: 35vw;
+  height: 60vh;
+}
+
+.friends-view-top {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: flex;
+  justify-content: space-between;;
+  align-items: center;
+  width: 140px;
+  height: 50px;
+  margin: auto;
+}
+
+.friends-view-top img {
+  margin-right: 0;
+}
+
+.friends-view-top h4 {
+  font-family: 'Lora' serif;
+  font-size: 19.8px;
+  line-height: 0px;
+  color: #232323;
+}
+
+.friend-order {
+  margin-left: 0px;
+  height: 15px;
+  width: 40px;
+  font-size: 10px;
+}
+
+.friend-photo-container img {
+  height: 16vh;
+  width: 15vw;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.friend-photo-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;;
+  align-items: center;
+}

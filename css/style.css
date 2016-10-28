@@ -18,11 +18,31 @@ header {
   border-bottom: 1px solid #a9a9a9;
 }
 
-#search-icon {
+#search-icon, #back-arrow, #user-thumbnail-container {
   margin-left: 3vw;
 }
 
-#menu-icon {
+.small-triangle, #user-thumbnail-container {
+  height: 53px;
+  width: 73px;
+}
+
+#user-thumbnail-container {
+  border-bottom: 5px solid #74FDF2;
+}
+
+#user-thumbnail {
+  background-position: center;
+  background-size: cover;
+  -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+}
+
+#inner-user-thumbnail {
+  background-color: rgba(0, 255, 233, 0.48);
+  -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+}
+
+#menu-icon, #search-icon-right {
   margin-right: 3vw;
 }
 
@@ -63,10 +83,13 @@ main p {
 
 .main-text {
   text-align: center;
-  height: 60vh;
+  /*Set the height to auto so that the profile will be vertically centered. I made sure to include the other, pre-set height that I originally used. That is in line with the sign-up and change profile boxes. However, with the auto, short bios won't look weird floating towards the top of the screen. Instead, they'll be centered. */
+  height: auto;
+  /*height: 60vh;*/
   width: 35vw;
   display: flex;
   flex-direction: column;
+  margin-bottom: 10vh;
 }
 
 main h1 {
@@ -100,6 +123,16 @@ main input {
   font-size: 13.44px;
   line-height: 17px;
   color: #9A9A9A;
+  background-color: #74FDF2;
+  border: none;
+  height: 4vh;
+}
+
+#addFriend {
+  font-family: 'Lora', serif;
+  font-size: 13.18px;
+  line-height: 16px;
+  color: #232323;
   background-color: #74FDF2;
   border: none;
   height: 4vh;
@@ -151,7 +184,6 @@ input:focus {
 #inner-bottom-triangle {
   margin-top: -15vh;
   background-color: rgba(0, 255, 233, 0.48);
-  opacity: 0.8;
   -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
 }
 

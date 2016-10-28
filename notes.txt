@@ -16,6 +16,7 @@ JS
 4. Make the api get call get more than 20 people at a time. And not just the first however many of the alphabet. Get a wide range.
 5. Have pop down menu on ng-click from upper right menu icon to switch between views.
 6. Have a user-initiated second call that searches for specific characters from the Marvel api. Do this by creating a new call with user-specified criteria.
+7. They ask that the back button go back to the friends view, not all the way back to the user profile. 
 
 Remaining views
 1. The view friends and friends profile page are just the exact same thing we already have, except the friend's profile page has their info (which will be an angular thing) and a blue "add friend bar".
@@ -27,7 +28,6 @@ Other
 1. Why does it load every element at once and then snap into it's proper formation?
 
 Friends view
-1. Put link to friend's profile on top of image.
 2. Change search icon to back arrow.
 
 As far as populating a friend's or stranger's profile page, it seems the easiest way to do so would be to create a new hidden div and make it appear when you click their photo. However, I would like it better if we could keep the user profile div we have, and simply switch the information.

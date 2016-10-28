@@ -4,7 +4,7 @@ angular.module('devMtnSocial').service('strangerService', function($http, $q) {
   // ******These were my first attempts to access and properly format the data from the Marvel api. They were messy, obviously, but they sort of worked. I keep them here for future reference.
   // setTimeout(function() {this.strangers = strangers; console.log("this is this.strangers:" + this.strangers);}, 2000);
 
-  // this.getHeroes = function() {
+  // this.getStrangers = function() {
   //   var deferObj = $q.defer();
   //   $http({
   //     method: 'GET',
@@ -15,19 +15,32 @@ angular.module('devMtnSocial').service('strangerService', function($http, $q) {
   //   return deferObj.promise;
   // };
 
-  // this.getHeroes = function() {
+
+  // this.getStrangers = function() {
   //   return $http({
   //     method: 'GET',
-  //     url: 'https://gateway.marvel.com:443/v1/public/characters?apikey=663fb1c634171cbd6e99378697d414eb'
+  //     url: 'https://gateway.marvel.com:443/v1/public/characters?limit=100&apikey=663fb1c634171cbd6e99378697d414eb'
   //   });
   // };
 
-  // This is an attempt to get a larger number of characters from the call. I can do a limit of 100 but not a limit of 200.
-  this.getHeroes = function() {
-    return $http({
+  this.getStrangers = function() {
+    var deferObj = $q.defer();
+    $http({
       method: 'GET',
       url: 'https://gateway.marvel.com:443/v1/public/characters?limit=100&apikey=663fb1c634171cbd6e99378697d414eb'
+    }).then(function(response) {
+      var parsedResults = [];
+      var strangers = response.data.data.results;
+      for (var i = strangers.length - 1; i >= 0; i--) {
+        if (strangers[i].thumbnail.path.includes("not") || !strangers[i].description) {
+          strangers.splice(i, 1);
+          continue;
+        }
+        parsedResults.unshift({name: strangers[i].name, tag: "He's a maniac on the floor", bio: strangers[i].description, img: 'url(' + strangers[i].thumbnail.path + '.jpg)'});
+      }
+      deferObj.resolve(parsedResults);
     });
+    return deferObj.promise;
   };
 
 

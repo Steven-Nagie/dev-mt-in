@@ -16,9 +16,16 @@
 <body ng-controller="mainCtrl">
 
 	<header>
-		<img src="./images/icons/search.svg" id='search-icon'>
+		<img src="./images/icons/search.svg" id='search-icon' ng-hide="upperLeftSearch">
+		<img src="./images/icons/back-arrow.svg" id="back-arrow" ng-hide="backArrow" ng-click="returnToMain()">
+		<div id="user-thumbnail-container"  ng-hide="userThumbnail">
+			<div id="user-thumbnail" ng-style='trianglePhoto' class="small-triangle">
+				<div id="inner-user-thumbnail" class="small-triangle"></div>
+			</div>
+		</div>
 		<p>DevMountain</p>
-		<img src="./images/icons/ham.svg" id='menu-icon'>
+		<img src="./images/icons/ham.svg" id='menu-icon' ng-hide="menuHide">
+		<img src="./images/icons/search.svg" id='search-icon-right' ng-hide="upperRightSearch">
 	</header>
 
 
@@ -54,6 +61,7 @@
 			<h1>{{currentStranger.name}}</h1>
 			<p id="some-awesome-tag">He's a maniac on the floor</p>
 			<p id="user-bio">{{currentStranger.description}}</p>
+			<input type="submit" value="Add Friend" ng-click="addFriend(currentStranger)" id="addFriend">
 		</div>
 
 			<!-- **********************PHOTO TRIANGLES************** -->

@@ -58,9 +58,11 @@
 
 			<!-- **********************PHOTO TRIANGLES************** -->
 		<div id="main-right" ng-hide="trianglesHidden">
-			<div id="top-triangle">
+			<div id="top-triangle" class="triangle">
+				<div id="inner-top-triangle" class="triangle"></div>
 			</div>
-			<div id="bottom-triangle" ng-style='trianglePhoto'>
+			<div id="bottom-triangle" ng-style='trianglePhoto' class="triangle">
+				<div id="inner-bottom-triangle" class="triangle"><div>
 			</div>
 		</div>
 
@@ -87,7 +89,9 @@
 			<img src="./images/icons/search.svg" id='search-icon'>
 		</div>
 		<div class="friend-photo-container">
-			<img ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo:6" ng-src={{friend.img}} alt={{friend.name}} ng-click="showFriendProfile()"  ng-model="currentFriend" /> <!--ng-click="dosomething to show friend profile"-->
+			<div class="thumbnails" ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo: 6" style="background-image: {{'url(' + friend.img + ')'}}" ng-click="showFriendProfile()">
+				<div class="innerThumbnail"></div>
+			</div>
 		</div>
 	</div>
 
@@ -97,8 +101,10 @@
 			<img src="./images/icons/search.svg" id='search-icon-find-friends'>
 			<h4 id="search-for-friends">Search For Friends</h4>
 		</div>
-		<div class="friend-photo-container" >
-			<img ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection| limitTo: 6" ng-src="{{stranger.thumbnail.path + '.jpg'}}" alt="{{stranger.name}}" ng-click="showStrangerProfile()" ng-model="currentStranger"/>
+		<div class="friend-photo-container">
+			<div class="thumbnails" ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection | limitTo: 6" style="background-image: {{'url(' + stranger.thumbnail.path + '.jpg)'}}" ng-click="showStrangerProfile()">
+				<div class="innerThumbnail"></div>
+			</div>
 		</div>
 	</div>
 

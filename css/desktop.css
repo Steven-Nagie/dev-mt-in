@@ -3,7 +3,8 @@
 .friend-order {
   height: auto;
   width: auto;
-  font-size: auto;
+  font-family: 'Lora', serif;
+  color: #232323;
   margin-left: 15px;
 }
 

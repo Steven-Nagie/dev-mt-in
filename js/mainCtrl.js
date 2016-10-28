@@ -160,6 +160,7 @@ angular.module('devMtnSocial')
       $scope.trianglesHidden = false;
       $scope.updateHidden = true;
     }
+    console.log($scope.friendsHidden);
   };
 
   $scope.showFind = function() {
@@ -190,7 +191,8 @@ angular.module('devMtnSocial')
     }
   };
 
-  $scope.showStrangerProfile = function() {
+  $scope.showStrangerProfile = function(stranger) {
+    $scope.currentStranger = stranger;
     $scope.strangerProfileHidden = false;
     $scope.userProfileHidden = true;
     $scope.findHidden = true;
@@ -198,18 +200,19 @@ angular.module('devMtnSocial')
     $scope.friendProfileHidden = true;
     $scope.signUpHidden = true;
     // $scope.trianglePhoto = {'background-image': $scope.userImage};
-    $scope.trianglePhoto = {'background-image': 'url(' + $scope.strangers[0].thumbnail.path + '.jpg)'};
+    $scope.trianglePhoto = {'background-image': 'url(' + stranger.thumbnail.path + '.jpg)'};
     console.log($scope.trianglePhoto);
   };
 
-  $scope.showFriendProfile = function() {
+  $scope.showFriendProfile = function(friend) {
+    $scope.currentFriend = friend;
     $scope.friendProfileHidden = false;
     $scope.userProfileHidden = true;
     $scope.friendsHidden = true;
     $scope.trianglesHidden = false;
     $scope.strangerProfileHidden = true;
     $scope.signUpHidden = true;
-    $scope.trianglePhoto = {'background-image': 'url(' + $scope.friends[0].img + ')'};
+    $scope.trianglePhoto = {'background-image': 'url(' + friend.img + ')'};
   };
 
 });

@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>DevMtin</title>
-	<link href="https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,600,700" rel="stylesheet" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/style.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/landingPage.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/updateProfile.css" media="screen" title="no title">
@@ -44,16 +44,16 @@
 
 		<!-- *********************FRIEND PROFILE******************** -->
 		<div id="userProfile" ng-hide="friendProfileHidden" class='main-text'>
-			<h1>{{friends[0].name}}</h1>
-			<p id="some-awesome-tag">{{friends[0].tag}}</p>
-			<p id="user-bio">{{friends[0].bio}}</p>
+			<h1>{{currentFriend.name}}</h1>
+			<p id="some-awesome-tag">{{currentFriend.tag}}</p>
+			<p id="user-bio">{{currentFriend.bio}}</p>
 		</div>
 
 		<!-- *********************STRANGER PROFILE******************** -->
 		<div id="userProfile" ng-hide="strangerProfileHidden" class='main-text'>
-			<h1>{{strangers[0].name}}</h1>
+			<h1>{{currentStranger.name}}</h1>
 			<p id="some-awesome-tag">He's a maniac on the floor</p>
-			<p id="user-bio">{{strangers[0].description}}</p>
+			<p id="user-bio">{{currentStranger.description}}</p>
 		</div>
 
 			<!-- **********************PHOTO TRIANGLES************** -->
@@ -62,7 +62,7 @@
 				<div id="inner-top-triangle" class="triangle"></div>
 			</div>
 			<div id="bottom-triangle" ng-style='trianglePhoto' class="triangle">
-				<div id="inner-bottom-triangle" class="triangle"><div>
+				<div id="inner-bottom-triangle" class="triangle"></div>
 			</div>
 		</div>
 
@@ -89,8 +89,11 @@
 			<img src="./images/icons/search.svg" id='search-icon'>
 		</div>
 		<div class="friend-photo-container">
-			<div class="thumbnails" ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo: 6" style="background-image: {{'url(' + friend.img + ')'}}" ng-click="showFriendProfile()">
-				<div class="innerThumbnail"></div>
+			<div class="thumbnails" ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo: 6" style="background-image: {{'url(' + friend.img + ')'}}" ng-click="showFriendProfile(friend)">
+				<div class="innerThumbnail" ng-mouseover="innerThumbnailElement={'visibility': 'visible'}" ng-mouseleave="innerThumbnailElement={'visibility': 'hidden'}">
+					<h5 class="inner-thumbnail-element" id="thumbnail-friend-name" ng-style="innerThumbnailElement">{{friend.name}}</h5>
+					<div class="inner-thumbnail-element" id="view-other-profile" ng-style="innerThumbnailElement">View Profile</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -102,8 +105,11 @@
 			<h4 id="search-for-friends">Search For Friends</h4>
 		</div>
 		<div class="friend-photo-container">
-			<div class="thumbnails" ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection | limitTo: 6" style="background-image: {{'url(' + stranger.thumbnail.path + '.jpg)'}}" ng-click="showStrangerProfile()">
-				<div class="innerThumbnail"></div>
+			<div class="thumbnails" ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection | limitTo: 6" style="background-image: {{'url(' + stranger.thumbnail.path + '.jpg)'}}" ng-click="showStrangerProfile(stranger)">
+				<div class="innerThumbnail" ng-mouseover="innerThumbnailElement={'visibility': 'visible'}" ng-mouseleave="innerThumbnailElement={'visibility': 'hidden'}">
+					<h5 class="inner-thumbnail-element" id="thumbnail-friend-name" ng-style="innerThumbnailElement">{{stranger.name}}</h5>
+					<div class="inner-thumbnail-element" id="view-other-profile" ng-style="innerThumbnailElement">View Profile</div>
+				</div>
 			</div>
 		</div>
 	</div>

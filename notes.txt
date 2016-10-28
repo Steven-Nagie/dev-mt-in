@@ -4,14 +4,8 @@ HTML
 4. Finish styling update inputs (borders/shadows)
 5. On landing page change search icon to miniature blue photo triangle.
 6. Fix triangle size
-7. Fix triangle position so that they are more centered in their containing div. As it is right now they are shooting out left and leaving a great deal of white space on their right.
-8. Put blue color on pictures.
 9. Profile full name should be offset.
 10. Search feature for friends (also implement it for strangers. They don't ask for it, but it makes sense.)
-11. Hover effect on friends and strangers pictures.
-  --Lay a div on top of the picture and hide it until we hover over it.
-  --Include ng-model so it knows which information to push to the profile when you click.
-  --Make sure to change picture as well when you do the click.
 12. Blue underlines when a certain nav bar link has been clicked.
   --Do this with a containing div, perhaps, like what Steven did with the moving underline feature he built.
 

@@ -27,7 +27,7 @@ header {
 }
 
 header p {
-  font-family: 'Lora' serif;
+  font-family: 'Lora', serif;
   color: #272727;
   font-size: 16.8px;
   line-height: 21px;
@@ -46,7 +46,7 @@ main {
 }
 
 main p {
-  font-family: 'Lora' serif;
+  font-family: 'Lora', serif;
   font-size: 12.07px;
   line-height: 14px;
   color: #232323;
@@ -70,7 +70,7 @@ main p {
 }
 
 main h1 {
-  font-family: 'Lora' serif;
+  font-family: 'Lora', serif;
   font-size: 38.4px;
   line-height: 46px;
   color: #272727;
@@ -129,11 +129,12 @@ input:focus {
   background-size: cover;
   transform: rotate(10deg);
   -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  margin-left: auto;
 }
 
 /* If I don't like the opacity in this style, I can go back to the opacity of 0.2 in the #top-triangle.*/
 #inner-top-triangle {
-  background-color: rgba(236, 236, 236, 0.91);
+  background-color: rgba(236, 236, 236, 0.81);
   margin-bottom: -15vh;
   -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
 }
@@ -144,6 +145,7 @@ input:focus {
   background-size: cover;
   transform: rotate(-10deg);
   -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+  margin-left: auto;
 }
 
 #inner-bottom-triangle {
@@ -176,7 +178,7 @@ input:focus {
 
 footer a {
   color: #a9a9a9;
-  font-family: "Open Sans" sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   font-size: 13.2px;
   line-height: 18px;

@@ -31,7 +31,7 @@
 			<input placeholder="Tagline" ng-model="newUserTag" onfocus="this.style.color='#232323'">
 			<input placeholder="Profile Image Url" ng-model="newUserImg" onfocus="this.style.color='#232323'">
 			<textarea placeholder="Bio" id="bio-input" ng-model="newUserBio" onfocus="this.style.color='#232323'"></textarea>
-			<input type="submit" value="Save Changes" ng-click="addNewUser(newUserName, newUserTag, newUserImg, newUserBio); signUpHidden=true; userProfileHidden=false; trianglePhoto={'background-image': userImage}" id="saveChanges">
+			<input type="submit" value="Save Changes" ng-click="addNewUser(newUserName, newUserTag, newUserImg, newUserBio)" id="saveChanges">
 		</div>
 
 		<!-- *********************USER PROFILE******************** -->
@@ -44,9 +44,9 @@
 
 		<!-- *********************FRIEND PROFILE******************** -->
 		<div id="userProfile" ng-hide="friendProfileHidden" class='main-text'>
-			<h1>{{chosenFriend.name}}</h1>
-			<p id="some-awesome-tag">{{chosenFriend.tag}}</p>
-			<p id="user-bio">{{chosenFriend.bio}}</p>
+			<h1>{{friends[0].name}}</h1>
+			<p id="some-awesome-tag">{{friends[0].tag}}</p>
+			<p id="user-bio">{{friends[0].bio}}</p>
 		</div>
 
 		<!-- *********************STRANGER PROFILE******************** -->
@@ -72,7 +72,7 @@
 			<input placeholder="Tagline" ng-model="oldUserTag" onfocus="this.style.color='#232323'">
 			<input placeholder="Profile Image Url" ng-model="oldUserImg" onfocus="this.style.color='#232323'">
 			<textarea placeholder="Bio" id="bio-input" ng-model="oldUserBio" onfocus="this.style.color='#232323'"></textarea>
-			<input type="submit" value="Save Changes" ng-click="changeUser(oldUserName, oldUserTag, oldUserImg, oldUserBio); updateHidden=!updateHidden; trianglesHidden=!trianglesHidden; trianglePhoto={'background-image': userImage}" id="saveUpdates">
+			<input type="submit" value="Save Changes" ng-click="changeUser(oldUserName, oldUserTag, oldUserImg, oldUserBio)" id="saveUpdates">
 	</div>
 
 	<!-- ************************YOUR FRIENDS************************ -->
@@ -87,7 +87,7 @@
 			<img src="./images/icons/search.svg" id='search-icon'>
 		</div>
 		<div class="friend-photo-container">
-			<img ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo:6" ng-src={{friend.img}} alt="friend.name" ng-model="currentFriend" /> <!--ng-click="dosomething to show friend profile"-->
+			<img ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo:6" ng-src={{friend.img}} alt={{friend.name}} ng-click="showFriendProfile()"  ng-model="currentFriend" /> <!--ng-click="dosomething to show friend profile"-->
 		</div>
 	</div>
 
@@ -98,7 +98,7 @@
 			<h4 id="search-for-friends">Search For Friends</h4>
 		</div>
 		<div class="friend-photo-container" >
-			<img ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection| limitTo: 6" ng-src="{{stranger.thumbnail.path + '.jpg'}}" alt="{{stranger.name}}" />
+			<img ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection| limitTo: 6" ng-src="{{stranger.thumbnail.path + '.jpg'}}" alt="{{stranger.name}}" ng-click="showStrangerProfile()" ng-model="currentStranger"/>
 		</div>
 	</div>
 

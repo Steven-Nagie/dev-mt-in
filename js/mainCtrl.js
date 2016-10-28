@@ -34,6 +34,7 @@ angular.module('devMtnSocial')
   // All the stuff contained here is for saving user profiles to the local storage.
   if (localStorage.list) {
     $scope.users = JSON.parse(localStorage.getItem('list'));
+    console.log($scope.users);
   }
   // *************************************
 
@@ -46,6 +47,10 @@ angular.module('devMtnSocial')
     console.log($scope.users);
     // The following creates a variable containing the image of the latest user, which we then push into the bottom triangle using ng-style.
     $scope.userImage = "url(" + $scope.users[$scope.users.length - 1].img + ")";
+    // This does a little bit of styling, so we can get rid of some of the text in our ng-click event on the Save Changes input button
+    $scope.signUpHidden = true;
+    $scope.userProfileHidden = false;
+    $scope.trianglePhoto = {'background-image': $scope.userImage};
   };
 
   $scope.changeUser = function(newName, newTag, newImg, newBio) {
@@ -68,18 +73,12 @@ angular.module('devMtnSocial')
     $scope.users = userList;
     localStorage.setItem('list', JSON.stringify($scope.users));
     $scope.userImage = "url(" + $scope.users[$scope.users.length - 1].img + ")";
+    $scope.updateHidden = !$scope.updateHidden;
+    $scope.trianglesHidden = !$scope.trianglesHidden;
+    $scope.trianglePhoto = {'background-image': $scope.userImage};
     console.log($scope.users);
   };
 
-  // These variables are all used as true/false toggles for adding classes to divs during the change between different pages.
-  $scope.signUpHidden = false;
-  $scope.userProfileHidden = true;
-  $scope.trianglesHidden = false;
-  $scope.updateHidden = true;
-  $scope.friendsHidden = true;
-  $scope.findHidden = true;
-  $scope.friendProfileHidden = true;
-  // $scope.strangerProfileHidden = true;
 
   // It was working well to just use friendsHidden = !friendsHidden, until there were more than two possibilities per location.
   // What's below is a really cool thing that will show the div you want upon first click, but upon second click will set everything right back to the way it was. However, I realized from a user perspective that wasn't the most friendly possible option.
@@ -138,6 +137,17 @@ angular.module('devMtnSocial')
   //   }
   // };
 
+
+    // These variables are all used as true/false toggles for adding classes to divs during the change between different pages.
+    $scope.signUpHidden = false;
+    $scope.userProfileHidden = true;
+    $scope.trianglesHidden = false;
+    $scope.updateHidden = true;
+    $scope.friendsHidden = true;
+    $scope.findHidden = true;
+    $scope.friendProfileHidden = true;
+    $scope.strangerProfileHidden = true;
+
   $scope.showFriends = function() {
     if ($scope.friendsHidden) {
       $scope.friendsHidden = false;
@@ -179,4 +189,27 @@ angular.module('devMtnSocial')
       $scope.updateHidden = true;
     }
   };
+
+  $scope.showStrangerProfile = function() {
+    $scope.strangerProfileHidden = false;
+    $scope.userProfileHidden = true;
+    $scope.findHidden = true;
+    $scope.trianglesHidden = false;
+    $scope.friendProfileHidden = true;
+    $scope.signUpHidden = true;
+    // $scope.trianglePhoto = {'background-image': $scope.userImage};
+    $scope.trianglePhoto = {'background-image': 'url(' + $scope.strangers[0].thumbnail.path + '.jpg)'};
+    console.log($scope.trianglePhoto);
+  };
+
+  $scope.showFriendProfile = function() {
+    $scope.friendProfileHidden = false;
+    $scope.userProfileHidden = true;
+    $scope.friendsHidden = true;
+    $scope.trianglesHidden = false;
+    $scope.strangerProfileHidden = true;
+    $scope.signUpHidden = true;
+    $scope.trianglePhoto = {'background-image': 'url(' + $scope.friends[0].img + ')'};
+  };
+
 });

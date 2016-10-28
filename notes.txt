@@ -2,40 +2,25 @@ TO DO
 HTML
 3. format sign up div to be the proper width and have the proper bottom margin
 4. Finish styling update inputs (borders/shadows)
-5. On landing page change search icon to miniature blue photo triangle.
 6. Fix triangle size
 9. Profile full name should be offset.
 10. Search feature for friends (also implement it for strangers. They don't ask for it, but it makes sense.)
+  --create animation of input bar that slides into existence. Can that be done with angular or only js? 
 12. Blue underlines when a certain nav bar link has been clicked.
   --Do this with a containing div, perhaps, like what Steven did with the moving underline feature he built.
 
 JS
 1. Have a way to access old user profiles using current local storage set up.
-2. Figure out how to properly rotate the three different views for each side.
-3. Set it up to save the strangers list to local storage so we don't have to make the api call every time we refresh the page. Do this with an if statement, same way we have the user profiles set up.
-4. Make the api get call get more than 20 people at a time. And not just the first however many of the alphabet. Get a wide range.
 5. Have pop down menu on ng-click from upper right menu icon to switch between views.
 6. Have a user-initiated second call that searches for specific characters from the Marvel api. Do this by creating a new call with user-specified criteria.
-7. They ask that the back button go back to the friends view, not all the way back to the user profile. 
-
-Remaining views
-1. The view friends and friends profile page are just the exact same thing we already have, except the friend's profile page has their info (which will be an angular thing) and a blue "add friend bar".
-
-
-Figured out the bug. I was trying to assign the userImage variable to the image of the first user, but because there is no original user, it was undefined, and it didn't like that. Fixing it required only that I move the function to a place where it doesn't automatically fire, instead it is invoked whenever I create the first user.
+7. They ask that the back button go back to the friends view, not all the way back to the user profile.
+8. Implement search bars in the friends views.
 
 Other
 1. Why does it load every element at once and then snap into it's proper formation?
 
-Friends view
-2. Change search icon to back arrow.
-
 As far as populating a friend's or stranger's profile page, it seems the easiest way to do so would be to create a new hidden div and make it appear when you click their photo. However, I would like it better if we could keep the user profile div we have, and simply switch the information.
 
-name: stranger.name
-tag:
-bio: stranger.description
-img: stranger.thumbnail.path + '.jpg'
 
 Profile photo:
 https://images.unsplash.com/photo-1454991727061-be514eae86f7?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=72e84205ce9da3b4c9e689289faba164

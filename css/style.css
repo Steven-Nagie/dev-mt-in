@@ -86,7 +86,8 @@ main p {
   /*Set the height to auto so that the profile will be vertically centered. I made sure to include the other, pre-set height that I originally used. That is in line with the sign-up and change profile boxes. However, with the auto, short bios won't look weird floating towards the top of the screen. Instead, they'll be centered. */
   height: auto;
   /*height: 60vh;*/
-  width: 35vw;
+  /*Previously at 35vw (same with the triangle containing div)*/
+  width: 45vw;
   display: flex;
   flex-direction: column;
   margin-bottom: 10vh;
@@ -145,10 +146,16 @@ input:focus {
 /*******MAIN-RIGHT********/
 #main-right {
   height: 60vh;
-  width: 35vw;
+  width: 45vw;
 }
 
 /*Notice the transform parameter to rotate the triangles*/
+
+/*Was at 300px each*/
+/*.triangle {
+  height: 40vh;
+  width: 40vw;
+}*/
 
 .triangle {
   height: 300px;
@@ -163,12 +170,13 @@ input:focus {
   transform: rotate(10deg);
   -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
   margin-left: auto;
+  margin-right: auto;
 }
 
 /* If I don't like the opacity in this style, I can go back to the opacity of 0.2 in the #top-triangle.*/
 #inner-top-triangle {
   background-color: rgba(236, 236, 236, 0.81);
-  margin-bottom: -15vh;
+  margin-bottom: -25vh;
   -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
 }
 
@@ -179,6 +187,7 @@ input:focus {
   transform: rotate(-10deg);
   -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
   margin-left: auto;
+  margin-right: auto;
 }
 
 #inner-bottom-triangle {

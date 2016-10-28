@@ -60,7 +60,7 @@
 		<div id="userProfile" ng-hide="strangerProfileHidden" class='main-text'>
 			<h1>{{currentStranger.name}}</h1>
 			<p id="some-awesome-tag">He's a maniac on the floor</p>
-			<p id="user-bio">{{currentStranger.description}}</p>
+			<p id="user-bio">{{currentStranger.bio}}</p>
 			<input type="submit" value="Add Friend" ng-click="addFriend(currentStranger)" id="addFriend">
 		</div>
 
@@ -97,7 +97,7 @@
 			<img src="./images/icons/search.svg" id='search-icon'>
 		</div>
 		<div class="friend-photo-container">
-			<div class="thumbnails" ng-repeat="friend in users[users.length - 1].friends | orderBy: friend.name : sortDirection | limitTo: 6" style="background-image: {{'url(' + friend.img + ')'}}" ng-click="showFriendProfile(friend)">
+			<div class="thumbnails" ng-repeat="friend in currentUser.friends | orderBy: friend.name : sortDirection | limitTo: 6" style="background-image: {{friend.img}}" ng-click="showFriendProfile(friend)">
 				<div class="innerThumbnail" ng-mouseover="innerThumbnailElement={'visibility': 'visible'}" ng-mouseleave="innerThumbnailElement={'visibility': 'hidden'}">
 					<h5 class="inner-thumbnail-element" id="thumbnail-friend-name" ng-style="innerThumbnailElement">{{friend.name}}</h5>
 					<div class="inner-thumbnail-element" id="view-other-profile" ng-style="innerThumbnailElement">View Profile</div>
@@ -113,7 +113,7 @@
 			<h4 id="search-for-friends">Search For Friends</h4>
 		</div>
 		<div class="friend-photo-container">
-			<div class="thumbnails" ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection | limitTo: 6" style="background-image: {{'url(' + stranger.thumbnail.path + '.jpg)'}}" ng-click="showStrangerProfile(stranger)">
+			<div class="thumbnails" ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection | limitTo: 6" style="background-image: {{stranger.img}}" ng-click="showStrangerProfile(stranger)">
 				<div class="innerThumbnail" ng-mouseover="innerThumbnailElement={'visibility': 'visible'}" ng-mouseleave="innerThumbnailElement={'visibility': 'hidden'}">
 					<h5 class="inner-thumbnail-element" id="thumbnail-friend-name" ng-style="innerThumbnailElement">{{stranger.name}}</h5>
 					<div class="inner-thumbnail-element" id="view-other-profile" ng-style="innerThumbnailElement">View Profile</div>

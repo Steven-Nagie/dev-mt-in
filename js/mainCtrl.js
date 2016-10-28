@@ -23,7 +23,7 @@ angular.module('devMtnSocial')
   $scope.getStrangers = function() {
     strangerService.getStrangers().then(function(response) {
       $scope.strangers = response;
-      
+
       localStorage.setItem('strangersList', JSON.stringify($scope.strangers));
 
       console.log($scope.strangers);
@@ -50,11 +50,11 @@ angular.module('devMtnSocial')
   // *************************************
 
   $scope.addNewUser = function(newName, newTag, newImg, newBio, newFriends) {
-    $scope.users.push({name: newName, tag: newTag, img: newImg, bio: newBio, friends: $scope.friends});
+    $scope.users.push({name: newName, tag: newTag, img: 'url(' + newImg + '.jpg)', bio: newBio, friends: $scope.friends});
     // This line immediately pushes any new user profiles to the local storage
     localStorage.setItem('list', JSON.stringify($scope.users));
     // The following creates a variable containing the image of the latest user, which we then push into the bottom triangle using ng-style.
-    $scope.userImage = "url(" + $scope.users[$scope.users.length - 1].img + ")";
+    $scope.userImage = $scope.users[$scope.users.length - 1].img;
     console.log($scope.users);
     // This does a little bit of styling, so we can get rid of some of the text in our ng-click event on the Save Changes input button
     $scope.signUpHidden = true;
@@ -198,7 +198,7 @@ angular.module('devMtnSocial')
     $scope.friendProfileHidden = true;
     $scope.signUpHidden = true;
     // $scope.trianglePhoto = {'background-image': $scope.userImage};
-    $scope.trianglePhoto = {'background-image': 'url(' + stranger.thumbnail.path + '.jpg)'};
+    $scope.trianglePhoto = {'background-image': stranger.img};
     console.log($scope.trianglePhoto);
   };
 
@@ -210,7 +210,7 @@ angular.module('devMtnSocial')
     $scope.trianglesHidden = false;
     $scope.strangerProfileHidden = true;
     $scope.signUpHidden = true;
-    $scope.trianglePhoto = {'background-image': 'url(' + friend.img + ')'};
+    $scope.trianglePhoto = {'background-image': friend.img};
   };
 
   $scope.returnToMain = function() {
@@ -227,6 +227,9 @@ angular.module('devMtnSocial')
     $scope.userThumbnail = false;
     $scope.upperRightSearch = false;
     $scope.menuHide = true;
+    $scope.trianglePhoto = {'background-image': $scope.currentUser.img};
+    console.log($scope.currentUser);
+
   };
 
 });

@@ -76,17 +76,21 @@
 
 	<!-- ***************************UPDATE PROFILE****************** -->
 	<div id="update" ng-hide="updateHidden" class='main-text'>
-		<p>Profile Settings</p>
-
+		<div id="update-top">
+			<h6>Profile Settings</h6>
+		</div>
+		<div id="update-middle">
 			<input type="text" placeholder="Full Name" ng-model="oldUserName" onfocus="this.style.color='#232323'">
 			<input placeholder="Tagline" ng-model="oldUserTag" onfocus="this.style.color='#232323'">
 			<input placeholder="Profile Image Url" ng-model="oldUserImg" onfocus="this.style.color='#232323'">
-			<textarea placeholder="Bio" id="bio-input" ng-model="oldUserBio" onfocus="this.style.color='#232323'"></textarea>
+			<textarea placeholder="Bio" id="bio-input-change" ng-model="oldUserBio" onfocus="this.style.color='#232323'"></textarea>
+		</div>
+
 			<input type="submit" value="Save Changes" ng-click="changeUser(oldUserName, oldUserTag, oldUserImg, oldUserBio)" id="saveUpdates">
+
 	</div>
 
 	<!-- ************************YOUR FRIENDS************************ -->
-	<!-- The list of friends is populated automatically with the friends list I created by hand. This will have the exact same look as if I just put in each data point individually one by one, with the exception that this would actually scale up perfectly (I think). -->
 	<div class='friendsView' ng-hide="friendsHidden">
 		<div class='friends-view-top'>
 			<select class="friend-order" ng-model="sortDirection">

@@ -25,6 +25,12 @@
 		</div>
 		<p>DevMountain</p>
 		<img src="./images/icons/ham.svg" id='menu-icon' ng-hide="menuHide">
+		<ul id="drop-menu">
+			<p>Home</p>
+			<p ng-click="showFriends()">View Friends</p>
+			<p ng-click="showFind()">Find Friends</p>
+			<p ng-click="showUpdate()">Update Profile</p>
+		</ul>
 		<img src="./images/icons/search.svg" id='search-icon-right' ng-hide="upperRightSearch">
 	</header>
 
@@ -114,6 +120,8 @@
 	<div class='friendsView' ng-hide="findHidden" id="find-friends">
 		<div class='friends-view-top' id="find-friends-top">
 			<img src="./images/icons/search.svg" id='search-icon-find-friends'>
+			<input id="slide-menu" type="text" placeholder="search" ng-model="friendSearchInput"></input>
+			<button id='slide-menu-button' ng-click='friendSearch(friendSearchInput)'>Search</button>
 			<h4 id="search-for-friends">Search For Friends</h4>
 		</div>
 		<div class="friend-photo-container">
@@ -145,5 +153,6 @@
 <script src="./js/upProfileService.js"></script>
 <script src="./js/friendStorage.js"></script>
 <script src="./js/strangerService.js"></script>
+<script src="./js/animations.js"></script>
 
 </html>

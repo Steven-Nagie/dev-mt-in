@@ -102,6 +102,10 @@ angular.module('devMtnSocial')
     $scope.strangers.splice(i, 1);
   };
 
+  $scope.friendSearch = function(input) {
+    strangerService.getStrangersSpecific(input);
+  };
+
     // These variables are all used as true/false toggles for adding classes to divs during the change between different pages.
     $scope.signUpHidden = false;
     $scope.userProfileHidden = true;

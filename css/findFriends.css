@@ -7,3 +7,15 @@
   position: relative;
   right: 20px;
 }
+
+#search-for-friends {
+  display: block;
+}
+
+#slide-menu-button {
+  display: none;
+}
+
+#slide-menu {
+  display: none;
+}

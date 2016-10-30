@@ -46,6 +46,12 @@ header {
   margin-right: 3vw;
 }
 
+#drop-menu {
+  display: none;
+  height: 10vh;
+  width: 30vw;
+}
+
 header p {
   font-family: 'Lora', serif;
   color: #272727;

@@ -23,6 +23,7 @@ angular.module('devMtnSocial').service('strangerService', function($http, $q) {
   //   });
   // };
 
+  // I put in the spider name search criteria, so watch out for that.
   this.getStrangers = function() {
     var deferObj = $q.defer();
     $http({

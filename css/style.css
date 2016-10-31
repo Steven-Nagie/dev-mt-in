@@ -232,6 +232,10 @@ footer a {
   text-decoration: none;
 }
 
+/*.friends-underline-div, .strangers-underline-div, .update-underline-div {
+  border-bottom: 4px solid #00ffe9;
+}*/
+
 /*Getting the text decoration color to work requires turning on "experimental web platform features" under chrome://flags*/
 footer a:hover {
   text-decoration: underline;

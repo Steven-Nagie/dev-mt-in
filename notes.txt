@@ -5,7 +5,7 @@ HTML
 6. Fix triangle size
 9. Profile full name should be offset.
 10. Search feature for friends (also implement it for strangers. They don't ask for it, but it makes sense.)
-  --create animation of input bar that slides into existence. Can that be done with angular or only js? 
+  --create animation of input bar that slides into existence. Can that be done with angular or only js?
 12. Blue underlines when a certain nav bar link has been clicked.
   --Do this with a containing div, perhaps, like what Steven did with the moving underline feature he built.
 

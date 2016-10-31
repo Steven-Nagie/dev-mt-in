@@ -33,21 +33,15 @@ angular.module('devMtnSocial')
   // When we first boot up, this will grab the Marvel api for us. Because the Marvel api stores thing on local storage, this also tests if we have already done it, and if we have, we don't bother doing it again, we just pull the stuff from local storage. This helps keep our calls to the api down.
   if (localStorage.strangersList) {
     $scope.strangers = JSON.parse(localStorage.getItem('strangersList'));
-    console.log($scope.strangers);
   } else {
     $scope.getStrangers();
   }
 
 
 
-  // All the stuff contained here is for saving user profiles to the local storage.
-  if (localStorage.list) {
-    $scope.users = JSON.parse(localStorage.getItem('list'));
-    console.log($scope.users);
-    $scope.currentUser = $scope.users[$scope.users.length - 1];
-    console.log($scope.currentUser);
-  }
-  // *************************************
+
+
+
 
   $scope.addNewUser = function(newName, newTag, newImg, newBio, newFriends) {
     $scope.users.push({name: newName, tag: newTag, img: 'url(' + newImg + '.jpg)', bio: newBio, friends: $scope.friends});
@@ -132,6 +126,9 @@ angular.module('devMtnSocial')
       $scope.updateHidden = true;
       $scope.menuHide = false;
       $scope.upperRightSearch = true;
+      $scope.friendsUnderlineDiv = {'border-bottom': '4px solid #00ffe9'};
+      $scope.strangersUnderlineDiv = {'border-bottom': 'none'};
+      $scope.updateUnderlineDiv = {'border-bottom': 'none'};
     } else {
       $scope.friendsHidden = true;
       $scope.backArrow = true;
@@ -141,6 +138,7 @@ angular.module('devMtnSocial')
       $scope.updateHidden = true;
       $scope.menuHide = true;
       $scope.upperRightSearch = false;
+      $scope.friendsUnderlineDiv = {'border-bottom': 'none'};
     }
   };
 
@@ -155,6 +153,9 @@ angular.module('devMtnSocial')
       $scope.updateHidden = true;
       $scope.menuHide = false;
       $scope.upperRightSearch = true;
+      $scope.friendsUnderlineDiv = {'border-bottom': 'none'};
+      $scope.strangersUnderlineDiv = {'border-bottom': '4px solid #00ffe9'};
+      $scope.updateUnderlineDiv = {'border-bottom': 'none'};
     } else {
       $scope.friendsHidden = true;
       $scope.backArrow = true;
@@ -164,6 +165,7 @@ angular.module('devMtnSocial')
       $scope.updateHidden = true;
       $scope.menuHide = true;
       $scope.upperRightSearch = false;
+      $scope.strangersUnderlineDiv = {'border-bottom': 'none'};
     }
   };
 
@@ -178,6 +180,9 @@ angular.module('devMtnSocial')
       $scope.updateHidden = false;
       $scope.menuHide = false;
       $scope.upperRightSearch = true;
+      $scope.friendsUnderlineDiv = {'border-bottom': 'none'};
+      $scope.strangersUnderlineDiv = {'border-bottom': 'none'};
+      $scope.updateUnderlineDiv = {'border-bottom': '4px solid #00ffe9'};
     } else {
       $scope.friendsHidden = true;
       $scope.backArrow = true;
@@ -187,6 +192,7 @@ angular.module('devMtnSocial')
       $scope.updateHidden = true;
       $scope.menuHide = true;
       $scope.upperRightSearch = false;
+      $scope.updateUnderlineDiv = {'border-bottom': 'none'};
     }
   };
 
@@ -232,8 +238,19 @@ angular.module('devMtnSocial')
     $scope.upperRightSearch = false;
     $scope.menuHide = true;
     $scope.trianglePhoto = {'background-image': $scope.currentUser.img};
-    console.log($scope.currentUser);
-
+    $scope.friendsUnderlineDiv = {'border-bottom': 'none'};
+    $scope.strangersUnderlineDiv = {'border-bottom': 'none'};
+    $scope.updateUnderlineDiv = {'border-bottom': 'none'};
   };
+
+  // All the stuff contained here is for saving user profiles to the local storage.
+  if (localStorage.list) {
+    $scope.users = JSON.parse(localStorage.getItem('list'));
+    $scope.currentUser = $scope.users[$scope.users.length - 1];
+    $scope.returnToMain();
+  }
+  // *************************************
+
+
 
 });

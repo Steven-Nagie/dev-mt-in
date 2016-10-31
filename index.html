@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="./css/friends.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/desktop.css" media="(min-width: 700px)" title="no title">
 	<link rel="stylesheet" href="./css/findFriends.css" media="screen" title="no title">
+	<link rel="shortcut icon" href="./images/logo_whiteletters.png" type="image/png">
 </head>
 <body ng-controller="mainCtrl">
 
@@ -140,9 +141,9 @@
 	<!-- ************************FOOTER************************* -->
 	<footer>
 		<div id="bottom-links">
-			<a href="" target="_blank" ng-click="showFriends()">View Friends</a>
-			<a href="" target="_blank" ng-click="showFind()">Find Friends</a>
-			<a href="" target="_blank" ng-click="showUpdate()">Update Profile</a>
+			<div class="friends-underline-div" ng-style="friendsUnderlineDiv"><a href="" target="_blank" ng-click="showFriends()">View Friends</a></div>
+			<div class="strangers-underline-div" ng-style="strangersUnderlineDiv"><a href="" target="_blank" ng-click="showFind()">Find Friends</a></div>
+			<div class="update-underline-div" ng-style="updateUnderlineDiv"><a href="" target="_blank" ng-click="showUpdate()">Update Profile</a></div>
 		</div>
 	</footer>
 </body>

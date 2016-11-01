@@ -65,7 +65,6 @@ angular.module('devMtnSocial')
     $scope.menuHide = true;
     // This sets our "currentUser" to the last value in the array.
     $scope.currentUser = $scope.users[$scope.users.length - 1];
-    go++;
   };
 
   $scope.changeUser = function(newName, newTag, newImg, newBio) {

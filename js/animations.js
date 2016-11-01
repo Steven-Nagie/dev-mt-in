@@ -20,7 +20,6 @@ $(document).ready(function() {
 
   $('p').click(function() {
     var words = $(this).text().split(' ');
-    console.log('thieks');
 
     for (var i = Math.floor(Math.random() * (5 - 1)); i < words.length; i) {
       var random = getRandomColor();
@@ -32,5 +31,5 @@ $(document).ready(function() {
   });
 
 
-  
+
 });

@@ -42,7 +42,13 @@ angular.module('devMtnSocial')
     $scope.getStrangers();
   }
 
-
+  // // All the stuff contained here is for saving user profiles to the local storage.
+  // if (localStorage.list) {
+  //   $scope.users = JSON.parse(localStorage.getItem('list'));
+  //   $scope.currentUser = $scope.users[$scope.users.length - 1];
+  //   // $scope.returnToMain();
+  // }
+  // // *************************************
 
 
 

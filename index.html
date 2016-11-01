@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="./css/findFriends.css" media="screen" title="no title">
 	<link rel="shortcut icon" href="./images/logo_whiteletters.png" type="image/png">
 </head>
-<body ng-controller="mainCtrl">
+<body ng-controller="mainCtrl" ng-cloak>
 
 	<header>
 		<img src="./images/icons/search.svg" id='search-icon' ng-hide="upperLeftSearch">
@@ -27,7 +27,7 @@
 		<p>DevMountain</p>
 		<img src="./images/icons/ham.svg" id='menu-icon' ng-hide="menuHide">
 		<ul id="drop-menu">
-			<p>Home</p>
+			<p ng-click="returnToMain()">Home</p>
 			<p ng-click="showFriends()">View Friends</p>
 			<p ng-click="showFind()">Find Friends</p>
 			<p ng-click="showUpdate()">Update Profile</p>
@@ -135,6 +135,10 @@
 			<input id="slide-menu" type="text" placeholder="search" ng-model="friendSearchInput"></input>
 			<button id='slide-menu-button' ng-click='friendSearch(friendSearchInput)'>Search</button>
 			<h4 id="search-for-friends">Search For Friends</h4>
+			<select class="stranger-order" ng-model="sortDirection">
+				<option value="true">Descending</option>
+				<option value="">Ascending</option>
+			</select>
 		</div>
 		<div class="friend-photo-container">
 			<div class="thumbnails" ng-repeat="stranger in strangers | orderBy: stranger.name : sortDirection | limitTo: 6" style="background-image: {{stranger.img}}" ng-click="showStrangerProfile(stranger)">

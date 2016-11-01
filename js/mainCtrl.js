@@ -5,6 +5,8 @@ angular.module('devMtnSocial')
   $scope.friends = friendService.friends;
   $scope.strangers = [];
 
+  var go = 0;
+
   // Calls the promise, sets my strangers array equal to the returned value, then splices out any data that don't contain valid urls for images. I made sure to do the same thing for 'description', which serves as the bio.
   // $scope.getStrangers = function() {
   //   var strangers = [];
@@ -60,7 +62,7 @@ angular.module('devMtnSocial')
     $scope.menuHide = true;
     // This sets our "currentUser" to the last value in the array.
     $scope.currentUser = $scope.users[$scope.users.length - 1];
-    console.log($scope.currentUser);
+    go++;
   };
 
   $scope.changeUser = function(newName, newTag, newImg, newBio) {
@@ -213,14 +215,14 @@ angular.module('devMtnSocial')
   };
 
   $scope.showFriendProfile = function(friend) {
-    $scope.currentFriend = friend;
-    $scope.friendProfileHidden = false;
-    $scope.userProfileHidden = true;
-    $scope.friendsHidden = true;
-    $scope.trianglesHidden = false;
-    $scope.strangerProfileHidden = true;
-    $scope.signUpHidden = true;
-    $scope.trianglePhoto = {'background-image': friend.img};
+      $scope.currentFriend = friend;
+      $scope.friendProfileHidden = false;
+      $scope.userProfileHidden = true;
+      $scope.friendsHidden = true;
+      $scope.trianglesHidden = false;
+      $scope.strangerProfileHidden = true;
+      $scope.signUpHidden = true;
+      $scope.trianglePhoto = {'background-image': friend.img};
   };
 
   $scope.returnToMain = function() {

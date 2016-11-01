@@ -48,8 +48,12 @@ header {
 
 #drop-menu {
   display: none;
-  height: 10vh;
-  width: 30vw;
+  position: absolute;
+  text-align: right;
+  top: 6vh;
+  right: 3vw;
+  /*height: 10vh;*/
+  width: 10vw;
 }
 
 header p {
@@ -184,9 +188,11 @@ input:focus {
   width: 40vw;
 }*/
 
+
+/*Originally had it at 300px for both width and height, which I liked except that it left a lot of white space.*/
 .triangle {
   height: 300px;
-  width: 300px;
+  width: 500px;
 }
 
 #top-triangle {

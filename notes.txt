@@ -3,7 +3,6 @@ HTML
 3. format sign up div to be the proper width and have the proper bottom margin
 4. Finish styling update inputs (borders/shadows)
 6. Fix triangle size
-9. Profile full name should be offset.
 10. Search feature for friends (also implement it for strangers. They don't ask for it, but it makes sense.)
   --create animation of input bar that slides into existence. Can that be done with angular or only js?
 12. Blue underlines when a certain nav bar link has been clicked.
@@ -11,13 +10,13 @@ HTML
 
 JS
 1. Have a way to access old user profiles using current local storage set up.
-5. Have pop down menu on ng-click from upper right menu icon to switch between views.
 6. Have a user-initiated second call that searches for specific characters from the Marvel api. Do this by creating a new call with user-specified criteria.
 7. They ask that the back button go back to the friends view, not all the way back to the user profile.
 8. Implement search bars in the friends views.
 
 Other
 1. Why does it load every element at once and then snap into it's proper formation?
+--NG-CLOAK FOR THE WIN!!
 
 As far as populating a friend's or stranger's profile page, it seems the easiest way to do so would be to create a new hidden div and make it appear when you click their photo. However, I would like it better if we could keep the user profile div we have, and simply switch the information.
 

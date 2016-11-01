@@ -19,3 +19,8 @@
 #slide-menu {
   display: none;
 }
+
+.stranger-order {
+  position: relative;
+  left: 20px;
+}

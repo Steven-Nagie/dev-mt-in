@@ -17,7 +17,7 @@
 <body ng-controller="mainCtrl" ng-cloak>
 
 	<header>
-		<img src="https://raw.githubusercontent.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon' ng-hide="upperLeftSearch">
+		<img src="https://rawgit.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon' ng-hide="upperLeftSearch">
 		<img src="https://rawgit.com/Steven-Nagie/dev-mt-in/master/images/Icons/Back-Arrow.svg" id="back-arrow" ng-hide="backArrow" ng-click="returnToMain()">
 		<div id="user-thumbnail-container"  ng-hide="userThumbnail">
 			<div id="user-thumbnail" ng-style='trianglePhoto' class="small-triangle">
@@ -32,7 +32,7 @@
 			<p ng-click="showFind()">Find Friends</p>
 			<p ng-click="showUpdate()">Update Profile</p>
 		</ul>
-		<img src="https://raw.githubusercontent.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon-right' ng-hide="upperRightSearch">
+		<img src="https://rawgit.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon-right' ng-hide="upperRightSearch">
 	</header>
 
 
@@ -116,7 +116,7 @@
 				<option value="">Ascending</option>
 			</select>
 			<h4>Friends</h4>
-			<img src="https://raw.githubusercontent.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon'>
+			<img src="https://rawgit.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon'>
 		</div>
 		<div class="friend-photo-container">
 			<div class="thumbnails" ng-repeat="friend in currentUser.friends | orderBy: friend.name : sortDirection | limitTo: 6" style="background-image: {{friend.img}}" ng-click="showFriendProfile(friend)">
@@ -131,7 +131,7 @@
 	<!-- *********************FIND FRIENDS*********************** -->
 	<div class='friendsView' ng-hide="findHidden" id="find-friends">
 		<div class='friends-view-top' id="find-friends-top">
-			<img src="https://raw.githubusercontent.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon-find-friends'>
+			<img src="https://rawgit.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon-find-friends'>
 			<input id="slide-menu" type="text" placeholder="search" ng-model="friendSearchInput"></input>
 			<button id='slide-menu-button' ng-click='friendSearch(friendSearchInput)'>Search</button>
 			<h4 id="search-for-friends">Search For Friends</h4>

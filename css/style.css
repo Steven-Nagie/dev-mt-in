@@ -106,6 +106,27 @@ main h1 {
   color: #272727;
 }
 
+#name-div {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  margin-bottom: 3vh;
+}
+
+#first-name {
+  align-self: flex-start;
+  text-align: left;
+  margin: 0;
+  /*width: 230px;*/
+}
+
+#last-name {
+  align-self: flex-end;
+  text-align: left;
+  margin: 0;
+  /*width: 150px;*/
+}
+
 /*I set the margin to 5 to provide just a little space between the input boxes. This might affect the size of the sign-up-div, so be careful of that as you move forward. */
 main input {
   margin: 5px;

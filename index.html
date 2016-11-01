@@ -51,21 +51,32 @@
 		<!-- *********************USER PROFILE******************** -->
 		<!-- Important to note that my work around for displaying the user name (displaying the name of the first index of the array), is not the best idea, since the users array will probably have many users.  -->
 		<div id="userProfile" ng-hide="userProfileHidden" class='main-text'>
-			<h1>{{users[users.length - 1].name}}</h1>
+			<div id='name-div'>
+				<h1 id='first-name'>{{(users[users.length - 1].name.split(' '))[0]}}</h1>
+				<h1 id='last-name'>{{(users[users.length - 1].name.split(' '))[1]}}</h1>
+			</div>
 			<p id="some-awesome-tag">{{users[users.length - 1].tag}}</p>
 			<p id="user-bio">{{users[users.length - 1].bio}}</p>
 		</div>
 
 		<!-- *********************FRIEND PROFILE******************** -->
 		<div id="userProfile" ng-hide="friendProfileHidden" class='main-text'>
-			<h1>{{currentFriend.name}}</h1>
+			<!-- <h1>{{currentFriend.name}}</h1> -->
+			<div id='name-div'>
+				<h1 id='first-name'>{{(currentFriend.name.split(' '))[0]}}</h1>
+				<h1 id='last-name'>{{(currentFriend.name.split(' '))[1]}}</h1>
+			</div>
 			<p id="some-awesome-tag">{{currentFriend.tag}}</p>
 			<p id="user-bio">{{currentFriend.bio}}</p>
 		</div>
 
 		<!-- *********************STRANGER PROFILE******************** -->
 		<div id="userProfile" ng-hide="strangerProfileHidden" class='main-text'>
-			<h1>{{currentStranger.name}}</h1>
+			<!-- <h1>{{currentStranger.name}}</h1> -->
+			<div id='name-div'>
+				<h1 id='first-name'>{{(currentStranger.name.split(' '))[0]}}</h1>
+				<h1 id='last-name'>{{(currentStranger.name.split(' '))[1] + ' ' + (currentStranger.name.split(' '))[2]}}</h1>
+			</div>
 			<p id="some-awesome-tag">He's a maniac on the floor</p>
 			<p id="user-bio">{{currentStranger.bio}}</p>
 			<input type="submit" value="Add Friend" ng-click="addFriend(currentStranger)" id="addFriend">

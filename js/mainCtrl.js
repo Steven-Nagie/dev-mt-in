@@ -242,7 +242,7 @@ angular.module('devMtnSocial')
     $scope.userThumbnail = false;
     $scope.upperRightSearch = false;
     $scope.menuHide = true;
-    // $scope.trianglePhoto = {'background-image': $scope.currentUser.img};
+    $scope.trianglePhoto = {'background-image': $scope.currentUser.img};
     $scope.friendsUnderlineDiv = {'border-bottom': 'none'};
     $scope.strangersUnderlineDiv = {'border-bottom': 'none'};
     $scope.updateUnderlineDiv = {'border-bottom': 'none'};
@@ -256,8 +256,8 @@ angular.module('devMtnSocial')
   }
   // *************************************
 
-  $('#back-arrow').on('click', function() {
-    $('#bottom-triangle').css('background-image', $scope.currentUser.img);
-  });
+  // $('#back-arrow').on('click', function() {
+  //   $('#bottom-triangle').css('background-image', $scope.currentUser.img);
+  // });
 
 });

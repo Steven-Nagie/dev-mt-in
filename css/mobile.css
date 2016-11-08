@@ -20,13 +20,13 @@
 }
 
 @media (max-width: 943px) {
-  #search-for-friends {
+  #search-for-friends, #friends-header {
     font-size: 18px;
   }
 }
 
 @media (max-width: 704px) {
-  #search-for-friends {
+  #search-for-friends, #friends-header {
     font-size: 10px;
   }
 }

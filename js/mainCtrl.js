@@ -251,7 +251,6 @@ angular.module('devMtnSocial')
     $scope.friendsUnderlineDiv = {'border-bottom': 'none'};
     $scope.strangersUnderlineDiv = {'border-bottom': 'none'};
     $scope.updateUnderlineDiv = {'border-bottom': 'none'};
-    console.log("the big dog");
   };
 
   // All the stuff contained here is for saving user profiles to the local storage.

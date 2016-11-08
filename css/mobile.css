@@ -1,0 +1,41 @@
+#name-div h1 {
+  font-size: 28px;
+}
+
+
+
+.triangle {
+  height: 20vh;
+  width: 40vw;
+  margin-top: 20vh;
+}
+
+
+
+@media (min-width: 600px) {
+  .triangle {
+    height: 40vh;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 943px) {
+  #search-for-friends {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 704px) {
+  #search-for-friends {
+    font-size: 10px;
+  }
+}
+
+.stranger-order {
+  width: 30px;
+}
+
+.friends-underline-div, .strangers-underline-div, .update-underline-div {
+  text-align: center;
+  width: 15vw;
+}

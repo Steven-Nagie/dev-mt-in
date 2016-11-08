@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="./css/updateProfile.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/friends.css" media="screen" title="no title">
 	<link rel="stylesheet" href="./css/desktop.css" media="(min-width: 700px)" title="no title">
+	<link rel="stylesheet" href="./css/mobile.css" media="(max-width: 1000px)" title="no title">
 	<link rel="stylesheet" href="./css/findFriends.css" media="screen" title="no title">
 	<link rel="shortcut icon" href="./images/logo_whiteletters.png" type="image/png">
 </head>
@@ -132,7 +133,7 @@
 	<!-- *********************FIND FRIENDS*********************** -->
 	<div class='friendsView' ng-hide="findHidden" id="find-friends">
 		<div class='friends-view-top' id="find-friends-top">
-			<img src="https://rawgit.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon-find-friends'>
+			<!-- <img src="https://rawgit.com/Steven-Nagie/dev-mt-in/master/images/Icons/Search.svg" id='search-icon-find-friends'> -->
 			<input id="slide-menu" type="text" placeholder="search" ng-model="friendSearchInput"></input>
 			<button id='slide-menu-button' ng-click='friendSearch(friendSearchInput)'>Search</button>
 			<h4 id="search-for-friends">Search For Friends</h4>
@@ -162,7 +163,10 @@
 			<div class="update-underline-div" ng-style="updateUnderlineDiv"><a href="" target="_blank" ng-click="showUpdate()">Update Profile</a></div>
 		</div>
 	</footer>
+
 </body>
+
+
 <script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
 <script type="text/javascript" src="./js/app.js"></script>

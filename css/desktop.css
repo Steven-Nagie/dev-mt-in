@@ -25,3 +25,42 @@
   width: 15vw;
   /*margin: 6px;*/
 }
+
+/*.triangle {
+  height: 300px;
+  width: 500px;
+}
+
+#top-triangle {
+  margin-bottom: -15vh;
+  background-image: url("https://images.unsplash.com/photo-1434441963555-a2f91c3a5f7c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=a4a45eefe2f92f7d48afd05bd27b80e5");
+  background-position: center;
+  background-size: cover;
+  transform: rotate(10deg);
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* If I don't like the opacity in this style, I can go back to the opacity of 0.2 in the #top-triangle.*/
+/*#inner-top-triangle {
+  background-color: rgba(236, 236, 236, 0.81);
+  margin-bottom: -25vh;
+  -webkit-clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+#bottom-triangle {
+  margin-top: -15vh;
+  background-position: center;
+  background-size: cover;
+  transform: rotate(-10deg);
+  -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#inner-bottom-triangle {
+  margin-top: -15vh;
+  background-color: rgba(0, 255, 233, 0.48);
+  -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+}*/
